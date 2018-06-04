@@ -1,0 +1,40 @@
+//IMPORT GENERAL MIXINS AND CLASSES
+@import "_mixins.scss";
+
+.nbx-avatar {
+  border-radius: 4px;
+  overflow: hidden;
+  @include nbx-cero;
+  @include nbx-webkit-reset;
+  @include nbx-flex-common;
+  &.md {
+    width: 64px;
+    height: 64px;
+  }
+  &.color-5 {
+    background-color: $color-5;
+  }
+  &.color-2 {
+    background-color: $color-2;
+  }
+  &.placeholder {
+    background: {
+      image: url('../images/john-doe.png');
+      size: auto 80%;
+      position: center;
+      repeat: no-repeat;
+    }
+  }
+  span.nbx-initials {
+    color: $white;
+    font: {
+      family: 'Roboto', sans-serif;
+      size: 42px;
+      weight: 500;
+    }
+    text: {
+      transform: uppercase;
+      align: center;
+    }
+  }
+}

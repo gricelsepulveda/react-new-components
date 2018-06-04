@@ -1,0 +1,1837 @@
+@import "_mixins.scss";
+
+@mixin nbx-reset-combolist {
+  width: 0;
+  height: 0;
+  border: 0;
+  outline: 0;
+  padding: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 0;
+  padding-left: 0;
+  box-shadow: 0;
+  background: transparent;
+  background-color: transparent;
+  background-image: none;
+  color: $black;
+  @include nbx-roboto;
+  font-weight: normal;
+  display: inline-block;
+  @include nbx-cero;
+}
+
+/// CUSTOM STYLES  
+
+.nbx-combo-list {
+  position: absolute!important;
+  @include nbx-flex-common;
+  right: 0;
+  bottom: 0;
+  justify-content: flex-start;
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  box-sizing: border-box!important;
+  //CUSTOM WIDTH LIST {
+  &.list-width-100 {
+    .Select-menu {
+      width: 100px!important;
+    }
+  }
+  &.list-width-110 {
+    .Select-menu {
+      width: 110px!important;
+    }
+  }
+  &.list-width-120 {
+    .Select-menu {
+      width: 120px!important;
+    }
+  }
+  &.list-width-130 {
+    .Select-menu {
+      width: 130px!important;
+    }
+  }
+  &.list-width-140 {
+    .Select-menu {
+      width: 140px!important;
+    }
+  }
+  &.list-width-150 {
+    .Select-menu {
+      width: 150px!important;
+    }
+  }
+  &.list-width-160 {
+    .Select-menu {
+      width: 160px!important;
+    }
+  }
+  &.list-width-170 {
+    .Select-menu {
+      width: 170px!important;
+    }
+  }
+  &.list-width-180 {
+    .Select-menu {
+      width: 180px!important;
+    }
+  }
+  &.list-width-190 {
+    .Select-menu {
+      width: 190px!important;
+    }
+  }
+  &.list-width-200 {
+    .Select-menu {
+      width: 200px!important;
+    }
+  }
+  &.list-width-210 {
+    .Select-menu {
+      width: 210px!important;
+    }
+  }
+  &.list-width-220 {
+    .Select-menu {
+      width: 220px!important;
+    }
+  }
+  &.list-width-230 {
+    .Select-menu {
+      width: 230px!important;
+    }
+  }
+  &.list-width-240 {
+    .Select-menu {
+      width: 240px!important;
+    }
+  }
+  &.list-width-250 {
+    .Select-menu {
+      width: 250px!important;
+    }
+  }
+  &.list-width-260 {
+    .Select-menu {
+      width: 260px!important;
+    }
+  }
+  &.list-width-270 {
+    .Select-menu {
+      width: 270px!important;
+    }
+  }
+  &.list-width-280 {
+    .Select-menu {
+      width: 280px!important;
+    }
+  }
+  &.list-width-290 {
+    .Select-menu {
+      width: 290px!important;
+    }
+  }
+  &.list-width-300 {
+    .Select-menu {
+      width: 300px!important;
+    }
+  }
+  &.list-width-310 {
+    .Select-menu {
+      width: 310px!important;
+    }
+  }
+  &.list-width-320 {
+    .Select-menu {
+      width: 320px!important;
+    }
+  }
+  &.list-width-330 {
+    .Select-menu {
+      width: 330px!important;
+    }
+  }
+  &.list-width-340 {
+    .Select-menu {
+      width: 340px!important;
+    }
+  }
+  &.list-width-350 {
+    .Select-menu {
+      width: 350px!important;
+    }
+  }
+  &.list-width-360 {
+    .Select-menu {
+      width: 360px!important;
+    }
+  }
+  &.list-width-370 {
+    .Select-menu {
+      width: 370px!important;
+    }
+  }
+  &.list-width-380 {
+    .Select-menu {
+      width: 380px!important;
+    }
+  }
+  &.list-width-390 {
+    .Select-menu {
+      width: 390px!important;
+    }
+  }
+  &.list-width-400 {
+    .Select-menu {
+      width: 400px!important;
+    }
+  }
+  &.list-width-410 {
+    .Select-menu {
+      width: 410px!important;
+    }
+  }
+  &.list-width-420 {
+    .Select-menu {
+      width: 420px!important;
+    }
+  }
+  &.list-width-430 {
+    .Select-menu {
+      width: 430px!important;
+    }
+  }
+  &.list-width-440 {
+    .Select-menu {
+      width: 440px!important;
+    }
+  }
+  &.list-width-450 {
+    .Select-menu {
+      width: 450px!important;
+    }
+  }
+  &.list-width-460 {
+    .Select-menu {
+      width: 460px!important;
+    }
+  }
+  &.list-width-470 {
+    .Select-menu {
+      width: 470px!important;
+    }
+  }
+  &.list-width-480 {
+    .Select-menu {
+      width: 480px!important;
+    }
+  }
+  &.list-width-490 {
+    .Select-menu {
+      width: 490px!important;
+    }
+  }
+  &.list-width-500 {
+    .Select-menu {
+      width: 500px!important;
+    }
+  }
+  // CUSTOM HEIGHT LIST
+  &.list-height-50 {
+    .Select--single, .Select--multi {
+      .Select-menu-outer {
+        > * {
+          max-height: 50px!important;
+        }
+      }
+    }
+  }
+  &.list-height-60 {
+    .Select--single, .Select--multi {
+      .Select-menu-outer {
+        > * {
+          max-height: 60px!important;
+        }
+      }
+    }
+  }
+  &.list-height-70 {
+    .Select--single, .Select--multi {
+      .Select-menu-outer {
+        > * {
+          max-height: 70px!important;
+        }
+      }
+    }
+  }
+  &.list-height-80 {
+    .Select--single, .Select--multi {
+      .Select-menu-outer {
+        > * {
+          max-height: 80px!important;
+        }
+      }
+    }
+  }
+  &.list-height-90 {
+    .Select--single, .Select--multi {
+      .Select-menu-outer {
+        > * {
+          max-height: 90px!important;
+        }
+      }
+    }
+  }
+  &.list-height-100 {
+    .Select--single, .Select--multi {
+      .Select-menu-outer {
+        > * {
+          max-height: 100px!important;
+        }
+      }
+    }
+  }
+  &.list-height-110 {
+    .Select--single, .Select--multi {
+      .Select-menu-outer {
+        > * {
+          max-height: 110px!important;
+        }
+      }
+    }
+  }
+  &.list-height-120 {
+    .Select--single, .Select--multi {
+      .Select-menu-outer {
+        > * {
+          max-height: 120px!important;
+        }
+      }
+    }
+  }
+  &.list-height-130 {
+    .Select--single, .Select--multi {
+      .Select-menu-outer {
+        > * {
+          max-height: 130px!important;
+        }
+      }
+    }
+  }
+  &.list-height-140 {
+    .Select--single, .Select--multi {
+      .Select-menu-outer {
+        > * {
+          max-height: 140px!important;
+        }
+      }
+    }
+  }
+  &.list-height-150 {
+    .Select--single, .Select--multi {
+      .Select-menu-outer {
+        > * {
+          max-height: 150px!important;
+        }
+      }
+    }
+  }
+  &.list-height-160 {
+    .Select--single, .Select--multi {
+      .Select-menu-outer {
+        > * {
+          max-height: 160px!important;
+        }
+      }
+    }
+  }
+  &.list-height-170 {
+    .Select--single, .Select--multi {
+      .Select-menu-outer {
+        > * {
+          max-height: 170px!important;
+        }
+      }
+    }
+  }
+  &.list-height-180 {
+    .Select--single, .Select--multi {
+      .Select-menu-outer {
+        > * {
+          max-height: 180px!important;
+        }
+      }
+    }
+  }
+  &.list-height-190 {
+    .Select--single, .Select--multi {
+      .Select-menu-outer {
+        > * {
+          max-height: 190px!important;
+        }
+      }
+    }
+  }
+  &.list-height-200 {
+    .Select--single, .Select--multi {
+      .Select-menu-outer {
+        > * {
+          max-height: 200px!important;
+        }
+      }
+    }
+  }
+  .Select--single {
+    @include nbx-reset-combolist;
+    width: 100%;
+    position: absolute;
+    right: 0px;
+    top: -1px;
+    @include nbx-flex-common;
+    background: transparent;
+    background-color: transparent;
+    justify-content: flex-start;
+    width: 100%!important;
+    min-width: 100%!important;
+    max-width: 100%!important;
+    box-sizing: border-box!important;
+    transition: box-shadow 200ms ease;
+    //@include nbx-animate;
+    .Select-control {
+      @include nbx-border-lg;
+      @include nbx-reset-combolist;
+      @include nbx-flex-common;
+      justify-content: flex-start;
+      height: 100%;
+      background: transparent;
+      background-color: transparent;
+      position: relative;
+      @include nbx-animate;
+      box-sizing: border-box!important;
+      background: $white;
+      .Select-multi-value-wrapper {
+        @include nbx-reset-combolist;
+        @include nbx-flex-common;
+        justify-content: flex-start;
+        height: 100%;
+        box-sizing: border-box!important;
+        //background: rgba(red, 0.125)!important;
+        .Select-placeholder {
+          font-size: 13px;
+          color: $gray-8;
+          font-style: italic;
+          padding-left: 6px;
+          padding-right: 6px;
+          box-sizing: content-box;
+        }
+        .Select-value {
+          @include nbx-reset-combolist;
+          @include nbx-flex-common;
+          justify-content: flex-start;
+          height: 100%;
+          background: transparent;
+          background-color: transparent;
+          color: $black;
+          font-size: 13px;
+          width: 100%!important;
+          min-width: 100%!important;
+          max-width: 100%!important;
+          padding: 6px;
+          box-sizing: border-box;
+          //background:  green!important;
+          .Select-value-label {
+            @include nbx-reset-combolist;
+            width: 100%;
+            height: 17px;
+            @include nbx-roboto;
+            background: transparent;
+            background-color: transparent;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: inline-block;
+            //background:  red;
+          }
+        }
+        .Select-input {
+          @include nbx-reset-combolist;
+          @include nbx-flex-common;
+          justify-content: flex-start;
+          height: 100%;
+          position: relative;
+          @include nbx-roboto;
+          background: transparent;
+          background-color: transparent;
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          color: $black;
+          cursor: text;
+          text-align: left;
+          font-weight: 400;
+          //background:rgba(black, 0.25);
+          width: 100%!important;
+          min-width: 100%!important;
+          max-width: 100%!important;
+          div {
+            color: $black!important;
+            visibility: inherit !important;
+            z-index: 999 !important;
+            overflow: inherit!important;
+            background: white;
+            box-sizing: border-box;
+            margin-left: 6px;
+            font-size: 0px!important;
+            margin-right: 6px;
+          } 
+          input {
+            @include nbx-reset-combolist;
+            @include nbx-flex-common;
+            justify-content: flex-start;
+            outline: none;
+            border: none;
+            border-radius: none;
+            box-shadow: none;
+            line-height: inherit;
+            height: 100%;
+            color: $black;
+            @include nbx-roboto;
+            position: relative;
+            cursor: text;
+            text-align: left;
+            font-size: 13px!important;
+            font-weight: 400;
+            z-index: 0 !important;
+            //background: blue;
+            width: 100%!important;
+            min-width: 100%!important;
+            max-width: 100%!important; 
+            box-sizing: border-box;
+            padding-left: 6px;
+            padding-right: 6px;
+          }
+        }
+      }
+      .Select-clear-zone {
+        @include nbx-reset-combolist;
+        background: transparent;
+        background-color: transparent;
+        display: none!important;
+        span {
+          @include nbx-reset-combolist;
+          @include nbx-flex-common;
+          position: absolute;
+          right: 0px;
+          top: 0px;
+          width: 28px;
+          height: 28px;
+          font-size: 0;
+          cursor: pointer;
+          &:before {
+            font-family: 'Nubox';
+            font-size: 16px;
+            content: "\e904";
+            color: $black;
+          }
+        }
+      }
+      .Select-arrow-zone{
+        @include nbx-reset-combolist;
+        background: transparent;
+        background-color: transparent;
+        span {
+          @include nbx-reset-combolist;
+          @include nbx-flex-common;
+          position: absolute;
+          top: 0px;
+          font-size: 0;
+          cursor: pointer;
+          //background: rgba(red, 0.125)!important; 
+          &:before {
+            font-family: 'Nubox';
+            font-size: 14px;
+            content: "\e90a";
+            color: $black;
+            position: relative;
+            margin: 0 auto;
+            display: block;
+            text-align: center;
+            width: 100%;
+          }
+        }
+      }
+    }
+    .Select-menu-outer {
+      margin-top: 1px!important;
+      @include nbx-reset-combolist;
+      @include nbx-flex-common;
+      max-width: 100%;
+      > * {
+        @include nbx-reset-combolist;
+        @include nbx-flex-alt;
+        background-color: $white;
+        border: 1px solid $gray-19;
+        width: calc(100% + 1px);
+        height: auto!important;
+        max-height: 200px;
+        overflow-y: auto;
+        position: absolute;
+        font-size: 13px;
+        left: -1px;
+        z-index: 9999; // AQUI SE CONTROLA EL Z INDEX DEL DROPDOWN
+        align-items: flex-start;
+        align-content: flex-start;
+        justify-content: flex-start;
+        > * {
+          @include nbx-reset-combolist;
+          @include nbx-flex-common;
+          width: 100% !important;
+          justify-content: flex-start;
+          padding-top: 6px;
+          padding-left: 6px;
+          padding-right: 6px;
+          padding-bottom: 6px;
+          font-size: 13px;
+          cursor: pointer;
+          background: transparent;
+          background-color: transparent;
+          box-sizing: border-box;
+          white-space: nowrap;
+          overflow: hidden;
+          display: block;
+          text-overflow: ellipsis;
+          @include nbx-animate;
+          &:hover {
+            background-color: $gray-1;
+          }
+          &.is-focused {
+            background-color: $gray-1;
+          }
+        }
+      }
+    }
+  }
+  &.sm {
+    height: 28px!important;
+    .Select, .Select--single {
+      height: 28px;
+      min-height: 28px;
+      max-height: 28px;
+      .Select-control {
+        padding-right: 34px;
+        width: calc(100% - 26px)!important;
+        min-width: calc(100% - 26px)!important;
+        max-width: calc(100% - 26px)!important;
+        .Select-multi-value-wrapper {
+          width: calc(100% + 34px)!important;
+          min-width: calc(100% + 34px)!important;
+          max-width: calc(100% + 34px)!important;
+          .Select-input {
+            color: $black !important;
+            div {
+              height: 28px!important;
+              color: $black !important;
+            }
+          }
+          .Select-value {
+            .Select-value-label {
+              //line-height: 28px;
+              height: 17px;
+            }
+          }
+        }
+        .Select-arrow-zone{
+          span {
+            width: 28px;
+            height: 28px;
+            right: -26px!important; 
+            &:before {
+              margin-top: 0;
+            }
+          }
+        }
+      }
+    }
+    .Select-menu-outer {
+      top: 26px;
+      > * {
+        top: 26px;
+        > * {
+          min-height: 28px!important;
+          height: 28px!important;
+          max-height: 28px!important;
+          line-height: 23px;
+        }
+      }
+    }
+  }
+  &.lg {
+    height: 32px!important;
+    .Select, .Select--single {
+      height: 32px;
+      min-height: 32px;
+      max-height: 32px;
+      .Select-control {
+        padding-right: 38px;
+        padding-top: 4px;
+        width: calc(100% - 24px)!important;
+        min-width: calc(100% - 24px)!important;
+        max-width: calc(100% - 24px)!important;
+        .Select-multi-value-wrapper {
+          width: calc(100% + 38px)!important;
+          min-width: calc(100% + 38px)!important;
+          max-width: calc(100% + 38px)!important;
+          .Select-value {
+            .Select-value-label {
+              line-height: 32px;
+              height: 17px;
+            }
+          }
+          > .Select-placeholder {
+            margin-top: -4px;
+          }
+        }
+        .Select-arrow-zone{
+          span {
+            width: 34px;
+            height: 32px;
+            right: -24px!important;
+            &:before{
+              margin-top: 0;
+            } 
+          }
+        }
+      }
+    }
+    .Select-menu-outer {
+      top: 30px;
+      > * {
+        top: 30px;
+        > * {
+          min-height: 32px!important;
+          height: 32px!important;
+          max-height: 32px!important;
+          line-height: 23px;
+        }
+      }
+    }
+  }
+  &.normal {
+    .Select {
+      border: 1px solid $gray-19;
+      border-radius: 3px;
+      &.is-focused {
+        border-color: $color-5;
+        box-shadow: 0 0 0 1px $color-5;
+      }
+    }
+    &.sm {
+      .Select {
+        &.is-focused {
+          border-color: $color-5;
+          box-shadow: 0 0 0 1px $color-5;
+        }
+      }
+    }
+    &.lg {
+      border: 0px!important;
+      .Select {
+        border: 1px solid $gray-19;
+        border-radius: 3px;
+        margin-top: 1px;
+        .Select-value {
+          .Select-value-label{
+            height: 30px!important;
+            line-height: auto!important;
+            margin-top: -6px!important;
+          }
+        }
+        .Select-input {
+          > div {
+            height: 28px!important;
+            line-height: 31px;
+            top: 0px!important;
+            background: transparent;
+          }
+        }
+        &.is-focused {
+          border-color: $color-5;
+          box-shadow: 0 0 0 1px $color-5;
+        }
+      }
+    }
+    &.sm {
+      .Select, .Select--single{
+        .Select-control{
+          .Select-arrow-zone{
+            @include nbx-reset-combolist;
+            background: transparent;
+            background-color: transparent;
+            span {
+              @include nbx-reset-combolist;
+              @include nbx-flex-common;
+              position: absolute;
+              width: 26px;
+              height: 28px;
+              right: -1px;
+              top: -1px;
+              margin-right: -1px;
+              font-size: 0;
+              cursor: pointer;
+              background-color: $color-3;
+              border: 1px solid $color-3;
+              border-radius: 0px 2px 2px 0px;
+              &:before {
+                font-family: 'Nubox';
+                font-size: 14px;
+                content: "\e90a";
+                color: $white;
+                margin-left: 2px;
+              }
+            }
+          }
+        }
+      }
+    }
+    &.lg {
+      .Select, .Select--single{
+        .Select-control{
+          .Select-multi-value-wrapper {
+            .Select-value {
+              .Select-value-label {
+                //line-height: 32px!important;
+                height: 32px;
+                margin-top: -5px;
+              }
+            }
+          }
+          .Select-arrow-zone{
+            @include nbx-reset-combolist;
+            background: transparent;
+            background-color: transparent;
+            span {
+              @include nbx-reset-combolist;
+              @include nbx-flex-common;
+              position: absolute;
+              width: 24px;
+              height: 30px;
+              right: 0px;
+              top: 0px;
+              font-size: 0;
+              cursor: pointer;
+              background-color: $color-3;
+              border-radius: 0px 2px 2px 0px;
+              border: 1px solid $color-3;
+              &:before {
+                font-family: 'Nubox';
+                font-size: 14px;
+                content: "\e90a";
+                color: $white;
+                margin-left: 0px;
+              }
+            }
+          }
+        }
+      }
+    }
+    &.disabled {
+      color: $gray-15;
+      .Select, .Select--single{
+        color: $gray-15;
+        .Select-control{
+          color: $gray-15;
+          .Select-multi-value-wrapper {
+            color: $gray-15;
+            .Select-value {
+              color: $gray-15;
+              > span {
+                color: $gray-15;
+              }
+            }
+            .Select-input {
+              color: $gray-15;
+              > input {
+                color: $gray-15;
+              }
+            }
+          }
+          .Select-arrow-zone{
+            span {
+              background-color: $gray-17;
+              border: 1px solid $gray-16;
+              &:before {
+                color: $gray-15!important; 
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &.base-line {  
+    .Select, .Select--single{
+      border-bottom: 1px solid $gray-19;
+      &.is-focused {
+        border-bottom: 2px solid $color-5;
+        .Select-control{
+          .Select-multi-value-wrapper{
+            .Select-value {
+              .Select-value-label {
+                line-height: 20px!important;
+              }
+            }
+          }
+        }
+      }
+      .Select-control{
+        .Select-value { 
+          .Select-value-label {
+            //line-height: 18px!important;
+          }
+        }
+        .Select-arrow-zone{
+          @include nbx-reset-combolist;
+          background: transparent;
+          background-color: transparent;
+          span {
+            @include nbx-reset-combolist;
+            @include nbx-flex-common;
+            position: absolute;
+            right: 0px;
+            top: 4px!important;
+            font-size: 0;
+            cursor: pointer;
+            &:before {
+              font-family: 'Nubox';
+              font-size: 14px;
+              content: "\e90a";
+              color: $color-3!important;
+            }
+          }
+        }
+      }
+    }
+    .Select, .Select--single{
+      .Select-control{
+        .Select-arrow-zone{
+          @include nbx-reset-combolist;
+          background: transparent;
+          background-color: transparent;
+          span {
+            @include nbx-reset-combolist;
+            @include nbx-flex-common;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            width: 28px;
+            height: 28px;
+            font-size: 0;
+            cursor: pointer;
+            &:before {
+              font-family: 'Nubox';
+              font-size: 14px;
+              content: "\e90a";
+            }
+          }
+        }
+      }
+    }
+    &.sm {
+      .Select, .Select--single{
+        .Select-control{
+          .Select-arrow-zone{
+            @include nbx-reset-combolist;
+            background: transparent;
+            background-color: transparent;
+            span {
+              @include nbx-reset-combolist;
+              @include nbx-flex-common;
+              position: absolute;
+              width: 26px;
+              height: 26px;
+              right: -1px;
+              top: -1px;
+              font-size: 0;
+              cursor: pointer;
+              border: 1px solid transparent;
+              border-radius: 0px 2px 2px 0px;
+              &:before {
+                font-family: 'Nubox';
+                font-size: 14px;
+                content: "\e90a";
+                margin-left: 2px;
+              }
+            }
+          }
+        }
+      }
+    }
+    &.lg {
+      .Select, .Select--single{
+        .Select-control{
+          .Select-arrow-zone{
+            @include nbx-reset-combolist;
+            background: transparent;
+            background-color: transparent;
+            span {
+              @include nbx-reset-combolist;
+              @include nbx-flex-common;
+              position: absolute;
+              width: 24px;
+              height: 30px;
+              right: -1px;
+              top: -1px;
+              font-size: 0;
+              cursor: pointer;
+              border: 1px solid transparent;
+              &:before {
+                font-family: 'Nubox';
+                font-size: 14px;
+                content: "\e90a";
+                color: $white;
+                margin-left: 2px;
+              }
+            }
+          }
+        }
+      }
+    }
+    &.disabled {
+      color: $gray-15;
+      .Select, .Select--single{
+        color: $gray-15;
+        .Select-control{
+          color: $gray-15;
+          .Select-multi-value-wrapper {
+            color: $gray-15;
+            .Select-value {
+              color: $gray-15;
+              > span {
+                color: $gray-15;
+              }
+            }
+            .Select-input {
+              color: $gray-15;
+              > input {
+                color: $gray-15;
+              }
+            }
+          }
+          .Select-arrow-zone{
+            span {
+              &:before {
+                color: $gray-6;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  //CUSTOM DROP UP START
+  &.normal, &.base-line {
+    &.sm {
+      &.drop-up {
+        .Select {
+          .Select-control {
+            .Select-arrow-zone {
+              .Select-arrow {
+                &:before {
+                  content: "\e948";
+                }
+              }
+            }
+          }
+        }
+        .Select-menu-outer {
+          > * {
+            top: initial!important;
+            bottom: 26px!important;
+          }
+        }
+      }
+    }
+    &.lg {
+      &.drop-up {
+        .Select {
+          .Select-menu-outer {
+            > * {
+              top: initial!important;
+              bottom: 30px!important;
+            }
+          }
+          .Select-control {
+            .Select-arrow-zone {
+              .Select-arrow {
+                &:before {
+                 content: "\e948";
+                }
+              }
+            }
+          }
+        }
+      }
+    } 
+  }
+  // CUSTOM DROP UP END
+
+    /////////////////////////
+  /////////////////////////
+  ///////////////////////// MULTI
+
+  .Select--multi {
+    @include nbx-reset-combolist;
+    width: 100%;
+    position: absolute;
+    right: 0px;
+    top: -1px;
+    @include nbx-flex-common;
+    background: transparent;
+    background-color: transparent;
+    justify-content: flex-start;
+    width: 100%!important;
+    min-width: 100%!important;
+    max-width: 100%!important;
+    box-sizing: border-box!important;
+    .Select-control {
+      @include nbx-reset-combolist;
+      @include nbx-flex-common;
+      justify-content: flex-start;
+      height: 100%;
+      background: transparent;
+      background-color: transparent;
+      position: relative;
+      @include nbx-animate;
+      box-sizing: border-box!important;
+      .Select-multi-value-wrapper {
+        @include nbx-reset-combolist;
+        @include nbx-flex-common;
+        justify-content: flex-start;
+        height: 100%;
+        box-sizing: border-box!important;
+        .Select-placeholder {
+          font-size: 13px;
+          color: $gray-8;
+          font-style: italic;
+          padding-left: 6px;
+          padding-right: 6px;
+          box-sizing: content-box;
+        }
+        .Select-value {
+          border-radius: 3px;
+          border: 1px solid $color-3;
+          @include nbx-flex-common;
+          justify-content: space-between;
+          position: relative;
+          color: #007eff;
+          margin-left: 5px;
+          height: 20px;
+          width: auto;
+          background-color: transparent;
+          float: left;        
+          .Select-value-label {
+            height: 20px;
+            cursor: default;
+            padding-left: 6px;
+            padding-right: 6px;
+            background-color: $color-6;
+            color: $color-3;
+            font:{
+              size: 12px;
+              weight: 500;
+            }
+            text:{
+              align: center;
+              transform: capitalize;
+            }
+            @include nbx-roboto;
+            @include nbx-flex-common;
+            width: auto !important;
+            a.Select-value-label {
+              cursor: pointer;
+              text-decoration: none;
+            }            
+          }
+          .Select-value-icon {
+            cursor: pointer;
+            background-color: $color-3;
+            color: transparent;
+            height: 20px;
+            width: 20px!important;
+            position: relative;
+            display: inline-block;
+            &:before{
+              @include nbx-flex-common;
+              font-family: 'Nubox'!important;
+              font-size: 16px;
+              width: 20px!important;
+              height: 18px;
+              text-align: center;
+              position: absolute;
+              top: 1px;
+              left: -1px;
+              line-height: 20px;
+              vertical-align: middle;
+              color: $white;
+              content: '\e904';
+              &:hover,
+              &:focus {
+                background-color: $color-3;
+                color: transparent;
+              }
+              &:active {
+                background-color: $color-3;
+              }
+            }
+          }
+        }
+        .Select-input {
+          @include nbx-reset-combolist;
+          @include nbx-flex-common;
+          justify-content: flex-start;
+          height: 100%;
+          position: relative;
+          @include nbx-roboto;
+          background: transparent;
+          background-color: transparent;
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          color: $black;
+          cursor: text;
+          text-align: left;
+          font-size: 13px;
+          font-weight: 400;
+          div {
+            color: $black!important;
+            visibility: inherit !important;
+            z-index: 999 !important;
+            display: flex!important;
+            flex-direction: row!important;
+            justify-content: flex-start!important;
+            align-content: center!important;
+            align-items: center!important;
+            background: none!important;
+            overflow: inherit!important;
+            width: auto !important;
+          } 
+          input {
+            @include nbx-reset-combolist;
+            @include nbx-flex-common;
+            justify-content: flex-start;
+            outline: none;
+            border: none;
+            border-radius: none;
+            box-shadow: none;
+            line-height: inherit;
+            height: 100%;
+            color: $black;
+            @include nbx-roboto;
+            position: relative;
+            cursor: text;
+            text-align: left;
+            font-size: 13px;
+            font-weight: 400;
+            z-index: 0 !important;
+            &:hover, &:active, &:focus, &:visited{
+              @include nbx-reset-combolist;
+              justify-content: flex-start;
+              outline: none;
+              border: none;
+              border-radius: none;
+              box-shadow: none;
+              line-height: inherit;
+              background: transparent;
+              background-color: transparent;
+            } 
+          }
+        }
+      }
+      .Select-clear-zone {
+        @include nbx-reset-combolist;
+        background: transparent;
+        background-color: transparent;
+        display: none!important;
+        span {
+          @include nbx-reset-combolist;
+          @include nbx-flex-common;
+          position: absolute;
+          right: 0px;
+          top: 0px;
+          width: 28px;
+          height: 28px;
+          font-size: 0;
+          cursor: pointer;
+          &:before {
+            font-family: 'Nubox';
+            font-size: 16px;
+            content: "\e904";
+            color: $black;
+          }
+        }
+        &:hover, &:active, &:focus, &:visited{
+          @include nbx-reset-combolist;
+          justify-content: flex-start;
+          outline: none;
+          border: none;
+          border-radius: none;
+          box-shadow: none;
+          line-height: inherit;
+          background: transparent;
+          background-color: transparent;
+        } 
+      }
+      .Select-arrow-zone{
+        @include nbx-reset-combolist;
+        background: transparent;
+        background-color: transparent;
+        span {
+          @include nbx-reset-combolist;
+          @include nbx-flex-common;
+          position: absolute;
+          top: 0px;
+          font-size: 0;
+          cursor: pointer;
+          &:before {
+            font-family: 'Nubox';
+            font-size: 14px;
+            content: "\e90a";
+            color: $black;
+            position: relative;
+            margin: 0 auto;
+            display: block;
+            text-align: center;
+            width: 100%;
+          }
+        }
+        &:hover, &:active, &:focus, &:visited{
+          @include nbx-reset-combolist;
+          justify-content: flex-start;
+          outline: none;
+          border: none;
+          border-radius: none;
+          box-shadow: none;
+          line-height: inherit;
+          background: transparent;
+          background-color: transparent;
+        } 
+      }
+    }
+    .Select-menu-outer {
+      margin-top: 1px!important;
+      @include nbx-reset-combolist;
+      @include nbx-flex-common;
+      max-width: 100%;
+      > * {
+        @include nbx-reset-combolist;
+        @include nbx-flex-alt;
+        background-color: $white;
+        border: 1px solid $gray-19;
+        width: calc(100% + 1px)!important;
+        height: auto!important;
+        max-height: 200px;
+        overflow-y: auto;
+        position: absolute;
+        font-size: 13px;
+        left: -1px;
+        z-index: 9999; // AQUI SE CONTROLA EL Z INDEX DEL DROPDOWN
+        align-items: flex-start;
+        align-content: flex-start;
+        justify-content: flex-start;
+        > * {
+          @include nbx-reset-combolist;
+          @include nbx-flex-common;
+          width: 100% !important;
+          justify-content: flex-start;
+          padding-top: 6px;
+          padding-left: 6px;
+          padding-right: 6px;
+          padding-bottom: 6px;
+          font-size: 13px;
+          cursor: pointer;
+          background: transparent;
+          background-color: transparent;
+          box-sizing: border-box;
+          white-space: nowrap;
+          overflow: hidden;
+          display: block;
+          text-overflow: ellipsis;
+          @include nbx-animate;
+          &:hover {
+            background-color: $gray-1;
+          }
+          &.is-focused {
+            background-color: $gray-1;
+          }
+        }
+      }
+    }
+  }
+  &.sm {
+    height: 28px!important;
+    .Select, .Select--multi {
+      height: 28px;
+      min-height: 28px;
+      max-height: 28px;
+      .Select-control {
+        padding-right: 34px;
+        width: calc(100% - 26px)!important;
+        min-width: calc(100% - 26px)!important;
+        max-width: calc(100% - 26px)!important;
+        .Select-multi-value-wrapper {
+          width: calc(100% + 34px)!important;
+          min-width: calc(100% + 34px)!important;
+          max-width: calc(100% + 34px)!important;
+          .Select-input {
+            div {
+              height: 28px!important;
+            }
+          }
+          .Select-value {
+            .Select-value-label {
+              line-height: initial !important;
+            }
+          }
+        }
+        .Select-arrow-zone{
+          span {
+            width: 28px;
+            height: 28px;
+            right: -26px!important; 
+            &:before {
+              margin-top: 0;
+            }
+          }
+        }
+      }
+    }
+    .Select-menu-outer {
+      top: 26px;
+      > * {
+        top: 26px;
+        > * {
+          min-height: 28px!important;
+          height: 28px!important;
+          max-height: 28px!important;
+        }
+      }
+    }
+  }
+  &.lg {
+    height: 32px!important;
+    .Select, .Select--multi {
+      height: 32px;
+      min-height: 32px;
+      max-height: 32px;
+      .Select-control {
+        padding-right: 38px;
+        width: calc(100% - 24px)!important;
+        min-width: calc(100% - 24px)!important;
+        max-width: calc(100% - 24px)!important;
+        .Select-multi-value-wrapper {
+          width: calc(100% + 38px)!important;
+          min-width: calc(100% + 38px)!important;
+          max-width: calc(100% + 38px)!important;
+          .Select-input {
+            div {
+              height: 32px!important;
+            }
+          }
+          .Select-value {
+            .Select-value-label {
+              //line-height: initial !important;
+            }
+          }
+        }
+        .Select-arrow-zone{
+          span {
+            width: 34px;
+            height: 32px;
+            right: -24px!important;
+            &:before{
+              margin-top: 2px;
+            } 
+          }
+        }
+      }
+    }
+    .Select-menu-outer {
+      top: 30px;
+      > * {
+        top: 30px;
+        > * {
+          min-height: 32px!important;
+          height: 32px!important;
+          max-height: 32px!important;
+        }
+      }
+    }
+  }
+  &.normal {
+    border-radius: 3px;
+    border: 1px solid $gray-19;
+    &.active {
+      border: 1px solid $color-3;
+    }
+    &:hover {
+      border: 1px solid $hover-gray;
+    }
+    &.sm {
+      .Select, .Select--multi{
+        .Select-control{
+          .Select-arrow-zone{
+            @include nbx-reset-combolist;
+            background: transparent;
+            background-color: transparent;
+            span {
+              @include nbx-reset-combolist;
+              @include nbx-flex-common;
+              position: absolute;
+              width: 26px;
+              height: 26px;
+              right: -1px;
+              top: 0px;
+              font-size: 0;
+              cursor: pointer;
+              background-color: $color-3;
+              border: 1px solid $color-3;
+              border-radius: 0px 2px 2px 0px;
+              &:before {
+                font-family: 'Nubox';
+                font-size: 14px;
+                content: "\e90a";
+                color: $white;
+                margin-left: 2px;
+              }
+            }
+          }
+        }
+      }
+    }
+    &.lg {
+      .Select, .Select--multi{
+        .Select-control{
+          .Select-arrow-zone{
+            @include nbx-reset-combolist;
+            background: transparent;
+            background-color: transparent;
+            span {
+              @include nbx-reset-combolist;
+              @include nbx-flex-common;
+              position: absolute;
+              width: 24px;
+              height: 30px;
+              right: 0px;
+              top: 0px;
+              font-size: 0;
+              cursor: pointer;
+              background-color: $color-3;
+              border-radius: 0px 2px 2px 0px;
+              border: 1px solid $color-3;
+              &:before {
+                font-family: 'Nubox';
+                font-size: 14px;
+                content: "\e90a";
+                color: $white;
+                margin-left: 0px;
+              }
+            }
+          }
+        }
+      }
+    }
+    &.disabled {
+      color: $gray-15;
+      .Select, .Select--multi{
+        color: $gray-15;
+        .Select-control{
+          color: $gray-15;
+          .Select-multi-value-wrapper {
+            color: $gray-15;
+            .Select-value {
+              color: $gray-15;
+              > span {
+                color: $gray-15;
+              }
+            }
+            .Select-input {
+              color: $gray-15;
+              > input {
+                color: $gray-15;
+              }
+            }
+          }
+          .Select-arrow-zone{
+            span {
+              background-color: $gray-17;
+              border: 1px solid $gray-16;
+              &:before {
+                color: $gray-15!important; 
+              }
+            }
+          }
+        }
+      }
+      &:hover {
+        border: 1px solid $gray-16;
+      }
+    }
+  }
+  &.base-line {
+    border-top: 1px solid transparent;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    border-bottom-left-radius: 1px solid transparent;
+    border-bottom-right-radius: 1px solid 
+    transparent;
+    transition: border-color 200ms ease;
+    border-top-right-radius: 1px solid transparent;
+    border-top-left-radius: 1px solid transparent;
+    border-bottom: 1px solid $gray-19;
+    .Select, .Select--multi{
+      .Select-control{
+        .Select-arrow-zone{
+          @include nbx-reset-combolist;
+          background: transparent;
+          background-color: transparent;
+          span {
+            @include nbx-reset-combolist;
+            @include nbx-flex-common;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            font-size: 0;
+            cursor: pointer;
+            &:before {
+              font-family: 'Nubox';
+              font-size: 14px;
+              content: "\e90a";
+              color: $color-3!important;
+            }
+          }
+        }
+      }
+    }
+    &.active, &:hover {
+      border-bottom: 1px solid $color-3;
+      .Select, .Select--multi{
+        .Select-control{
+          .Select-arrow-zone{
+            @include nbx-reset-combolist;
+            background: transparent;
+            background-color: transparent;
+            span {
+              @include nbx-reset-combolist;
+              @include nbx-flex-common;
+              position: absolute;
+              right: 0px;
+              top: 0px;
+              font-size: 0;
+              cursor: pointer;
+              &:before {
+                font-family: 'Nubox';
+                font-size: 14px;
+                content: "\e90a";
+                color: $color-3;
+              }
+            }
+          }
+        }
+      }
+    }
+    &:hover {
+      border-bottom: 1px solid $hover-gray;
+      transition: border-color 200ms ease;
+    }
+    .Select, .Select--multi{
+      .Select-control{
+        .Select-arrow-zone{
+          @include nbx-reset-combolist;
+          background: transparent;
+          background-color: transparent;
+          span {
+            @include nbx-reset-combolist;
+            @include nbx-flex-common;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            width: 28px;
+            height: 28px;
+            font-size: 0;
+            cursor: pointer;
+            &:before {
+              font-family: 'Nubox';
+              font-size: 14px;
+              content: "\e90a";
+            }
+          }
+        }
+      }
+    }
+    &.sm {
+      .Select, .Select--multi{
+        .Select-control{
+          .Select-arrow-zone{
+            @include nbx-reset-combolist;
+            background: transparent;
+            background-color: transparent;
+            span {
+              @include nbx-reset-combolist;
+              @include nbx-flex-common;
+              position: absolute;
+              width: 26px;
+              height: 26px;
+              right: -1px;
+              top: -1px;
+              font-size: 0;
+              cursor: pointer;
+              border: 1px solid transparent;
+              border-radius: 0px 2px 2px 0px;
+              &:before {
+                font-family: 'Nubox';
+                font-size: 14px;
+                content: "\e90a";
+                margin-left: 2px;
+              }
+            }
+          }
+        }
+      }
+    }
+    &.lg {
+      .Select, .Select--multi{
+        .Select-control{
+          .Select-arrow-zone{
+            @include nbx-reset-combolist;
+            background: transparent;
+            background-color: transparent;
+            span {
+              @include nbx-reset-combolist;
+              @include nbx-flex-common;
+              position: absolute;
+              width: 24px;
+              height: 30px;
+              right: -1px;
+              top: -1px;
+              font-size: 0;
+              cursor: pointer;
+              border: 1px solid transparent;
+              &:before {
+                font-family: 'Nubox';
+                font-size: 14px;
+                content: "\e90a";
+                color: $white;
+                margin-left: 2px;
+              }
+            }
+          }
+        }
+      }
+    }
+    &.disabled {
+      color: $gray-15;
+      border-bottom: 1px solid $gray-6!important;
+      .Select, .Select--multi{
+        color: $gray-15;
+        .Select-control{
+          color: $gray-15;
+          .Select-multi-value-wrapper {
+            color: $gray-15;
+            .Select-value {
+              color: $gray-15;
+              > span {
+                color: $gray-15;
+              }
+            }
+            .Select-input {
+              color: $gray-15;
+              > input {
+                color: $gray-15;
+              }
+            }
+          }
+          .Select-arrow-zone{
+            span {
+              &:before {
+                color: $gray-6;
+              }
+            }
+          }
+        }
+      }
+      &:hover {
+        border-bottom: 1px solid $gray-16;
+      }
+    }
+  }
+
+  #react-select-2--backspace-remove-message {
+  display: none !important;
+  }
+}
+
+.nbx-combo-list.base-line .Select.is-focused .Select-multi-value-wrapper {
+    margin-top: -1px;
+}
+
+/// ESTILO VALIDACION (BORDER-BOTTOM ROJO) DE COMBOLIST
+
+.nbx-combo-list.validation-failed .Select--single .Select-control .Select-multi-value-wrapper .Select-input input {
+  border-bottom: 2px solid $color-10;
+  top: -1px;
+  &:focus {
+    top: 0px;
+  }
+}
+
+.nbx-combo-list.base-line.sm.validation-failed .Select .Select-control .Select-arrow-zone span {
+  border-bottom: 2px solid $color-10;
+  height: 24px;
+  &:before {
+    margin-top: 2px;
+  }
+}
+
+/// ICONO DE VALIDACION
+
+.nbx-combo-list {
+  &.validation-failed {
+    .nbx-icon-validation {
+      display: inline-block;
+      width: 24px;
+      background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDIyLjAuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkNhcGFfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiCgkgdmlld0JveD0iMCAwIDI0IDI0IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNCAyNDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmaWxsOiNFQTUyMEQ7fQo8L3N0eWxlPgo8dGl0bGU+aW52YWxpZG88L3RpdGxlPgo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMTIsMEM1LjM3MywwLDAsNS4zNzMsMCwxMnM1LjM3MywxMiwxMiwxMnMxMi01LjM3MywxMi0xMlMxOC42MjcsMCwxMiwweiBNMTMuNSwxOS41aC0zdi0zaDNWMTkuNXogTTEzLjUsMTMuNQoJaC0zdi05aDNWMTMuNXoiLz4KPC9zdmc+Cg==);
+      background-repeat: no-repeat;
+      background-size: 18px auto;
+      background-position: center;
+      position: absolute;
+      right: 0px;
+      bottom: 0px;
+      z-index: 100;
+      margin-right: 20px;
+    }
+  }
+  &.lg {
+    .nbx-icon-validation {
+      height: 32px;
+    }
+  }
+  &.sm {
+    .nbx-icon-validation {
+      height: 28px;
+    }
+  }
+}
+
+
+// FIREFOX
+
+html[data-useragent*="Firefox"] {
+  .nbx-combo-list.lg {
+    .Select .Select-control .Select-arrow-zone span::before, .Select--multi .Select-control .Select-arrow-zone span::before {
+      margin-top: 0;
+    }
+  }
+}

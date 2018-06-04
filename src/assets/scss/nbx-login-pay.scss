@@ -1,0 +1,48 @@
+@import "_mixins";
+
+.nbx-login-bg {
+  background: {
+    image: url('../images/nbx-pattern-pay-login.png');
+    size: auto;
+    repeat: repeat;
+    color: $color-2;
+    blend-mode: multiply;
+  }
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  @include nbx-flex-common;
+}
+
+img.nbx-logo-nubox {
+  width: 230px;
+  height: auto;
+  padding-bottom: 24px;
+  border-bottom: 1px solid $color-7;
+}
+
+h1.nbx-h1 {
+  color: $color-2;
+  font: {
+    family: 'Roboto', sans-serif;
+    size: 18px;
+    weight: 600;
+  }
+  text-align: center;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+p.nbx-p {
+  color: $black;
+  font: {
+    family: 'Roboto', sans-serif;
+    size: 16px;
+    weight: 400;
+  }
+  padding-top: 24px;
+  padding-bottom: 24px;
+}

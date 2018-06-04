@@ -1,0 +1,11 @@
+@import "_mixins";
+
+.nbx-panel-container {
+  position: relative;
+  background-color: $white;
+  border: 1px solid $gray-2;
+  padding: 24px;
+  @include nbx-box-shadow;
+  @include nbx-flex-alt;
+  justify-content: flex-start;
+}

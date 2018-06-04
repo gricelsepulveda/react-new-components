@@ -1,0 +1,280 @@
+//IMPORT GENERAL MIXINS AND CLASSES
+@import "_mixins.scss";
+@import "_animation.scss";
+
+// PARTICULAR CLASSES
+.nbx-popover {
+  @include animation-fadeIn;;
+  background-color: $white;
+  @include nbx-border-lg;
+  @include nbx-cero;
+  @include nbx-box-shadow;
+  @include animation-fadeIn(0.2s);
+  border: 1px solid $gray-2;  
+  position: absolute;
+  color: $black;
+  z-index: 2;
+  &.xs {
+    min-width: 75px;
+  }
+  &.sm {
+    min-width: 100px;
+  }
+  &.md {
+    min-width: 200px;
+  }
+  &.lg {
+    min-width: 300px;
+  }
+  &.xl {
+    min-width: 400px;
+  }
+  > .ul-popover {
+    position: relative;
+    width: auto;
+    @include nbx-webkit-reset;
+    @include nbx-clean-list;
+    @include nbx-cero;
+    @include nbx-flex-alt;
+    justify-content: flex-start;
+    color: $black;
+    > a.a-popover{
+      width: 100%;
+      height: 50px;
+      display: block;
+      @include nbx-clean-ahref;
+      cursor: pointer;
+      color: $black;
+      text: {
+        align: left;
+      }
+      cursor: pointer;
+      @include nbx-animate;
+      @include nbx-roboto;
+      font: {
+        size: 13px;
+        weight: 400;
+      }
+      &:hover {
+        background-color: darken($white, 10%);
+      }
+      &.disabled {
+        pointer-events: none;
+        color: $gray-19;
+      }
+      > .li-popover{
+        padding: 0px 20px 0px 20px;
+        @include nbx-flex-common;
+        justify-content: flex-start;
+        height: 100%;
+        color: $black;
+        text-transform: capitalize;
+        &.disabled {
+          //pointer-events: none;
+          color: $gray-19;
+          > span {
+            color: $gray-19;
+          }
+        }
+        > span {
+          color: $black;
+          margin-right: 6px;
+          display: inline-block;
+          font-size: 13px;
+          color: $black;
+        }
+      }
+    }
+  }
+  &.down {
+    top: calc(100% + 11px);
+    > .ul-popover{
+      .caret-container {
+        width: 100%;
+        @include nbx-flex-alt;
+        position: absolute;
+        top: -12px;
+        .caret-behind {
+          display: inline-block;
+          width: 0; 
+          height: 0;
+          border-left: 9px solid transparent;
+          border-right: 9px solid transparent;
+          border-bottom: 11px solid $gray-2;
+          position: relative;
+          margin-top: 1px;
+        }
+        .caret-front {
+          position: absolute;
+          left: -7px;
+          top: 1px;
+          display: inline-block;
+          width: 0; 
+          height: 0;
+          border-left: 7px solid transparent;
+          border-right: 7px solid transparent;
+          border-bottom: 10px solid $white;
+        }
+      }
+    }
+  }
+  &.up {
+    bottom: calc(100% + 11px);
+    .ul-popover{
+      .caret-container {
+        width: 100%;
+        @include nbx-flex-alt;
+        position: absolute;
+        bottom: -12px;
+        .caret-behind {
+          display: inline-block;
+          width: 0; 
+          height: 0;
+          border-left: 9px solid transparent;
+          border-right: 9px solid transparent;
+          border-top: 11px solid $gray-2;
+          position: relative;
+          margin-bottom: 1px;
+        }
+        .caret-front {
+          position: absolute;
+          left: -7px;
+          bottom: 1px;
+          display: inline-block;
+          width: 0; 
+          height: 0;
+          border-left: 7px solid transparent;
+          border-right: 7px solid transparent;
+          border-top: 10px solid $white;
+        }
+      }
+    }
+  }
+  &.right {
+    left: calc(100% + 11px);
+    .ul-popover{
+      .caret-container {
+        height: 100%;
+        @include nbx-flex-alt;
+        position: absolute;
+        top: 0px;
+        left: -11px;
+        .caret-behind {
+          display: inline-block;
+          width: 0; 
+          height: 0;
+          border-top: 9px solid transparent;
+          border-bottom: 9px solid transparent;
+          border-right: 11px solid $gray-2;
+          position: relative;
+          margin-bottom: 1px;
+        }
+        .caret-front {
+          position: absolute;
+          left: 1px;
+          bottom: -7px;
+          display: inline-block;
+          width: 0; 
+          height: 0;
+          border-top: 7px solid transparent;
+          border-bottom: 7px solid transparent;
+          border-right: 10px solid $white;
+        }
+      }
+    }
+  }
+  &.left {
+    right: calc(100% + 11px);
+    .ul-popover{
+      .caret-container {
+        height: 100%;
+        @include nbx-flex-alt;
+        position: absolute;
+        top: 0px;
+        right: -11px;
+        .caret-behind {
+          display: inline-block;
+          width: 0; 
+          height: 0;
+          border-top: 9px solid transparent;
+          border-bottom: 9px solid transparent;
+          border-left: 11px solid $gray-2;
+          position: relative;
+          margin-bottom: 1px;
+        }
+        .caret-front {
+          position: absolute;
+          right: 1px;
+          bottom: -7px;
+          display: inline-block;
+          width: 0; 
+          height: 0;
+          border-top: 7px solid transparent;
+          border-bottom: 7px solid transparent;
+          border-left: 10px solid $white;
+        }
+      }
+    }
+  }
+  &.contextual {
+    .caret-container {
+      visibility: hidden;
+    }
+    > .ul-popover {
+      > a.a-popover{
+        height: 40px;
+      }
+    } 
+  }
+}
+
+.nbx-popover-button {
+	text-transform: capitalize;
+	text-align: center;
+	border: none;
+	font-family: 'Proxima Soft', 'Roboto', Helvetica, Arial, sans-serif;
+	font-size: 15px;
+	font-weight: 500;
+	background-color: transparent;
+	cursor: pointer;
+	outline: 0;
+  margin: 0;
+  padding: 0 6px 0 0;
+	&.white {
+		color: $white;
+	}
+}
+
+.nbx-popover-button-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: $white;
+  font-size: 15px;
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+
+//IE
+html[data-useragent*="Trident"]{
+  //FIXES PARA PROBLEMA DE ALINEACIÓN HORIZONTAL DE LA FLECHA
+  .nbx-popover{
+    &.up {
+      .ul-popover{
+        .caret-container {
+          position: relative;
+        
+        }
+      }
+    }
+    &.down {
+      .ul-popover{
+        .caret-container {
+          position: relative;
+          margin-bottom: -12px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,132 @@
+//IMPORT GENERAL MIXINS AND CLASSES
+@import "_mixins.scss";
+
+// PARTICULAR CLASSES
+.nbx-label{
+  color: $white;
+  box-sizing: border-box; 
+  margin-left: 14px;
+  cursor: text;
+  padding: 0px 8px 0px 2px;
+  display: inline-block;
+  position: relative;
+  @include nbx-flex-common;
+  @include nbx-animate;
+  @include nbx-roboto;
+  border-radius: 0px 2px 2px 0px;
+  font: {
+    size: 11px;
+    weight: 500;
+  }
+  text: {
+    align: center;
+    transform: uppercase;
+  }
+  outline: none;
+  &:hover, &:active, &:focus {
+    outline: none;
+  }
+  &:before {
+    display: inline-block;
+    width: 0px;
+    height: 0px;
+    content: " ";
+    position: absolute;
+    left: -13px;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent; 
+  }
+
+  $color-1: #1f2a44; // BLUE NUBOX
+  $color-2: #ff8d1d; // ORANGE NUBOX
+  $color-3: #336699; // SOFT BLUE
+  $color-4: #005ab9; // BLUE
+  $color-5: #2196f3; // SKYBLUE
+  $color-6: #d5edff; // SKYBLUE SOFT
+  $color-7: #e2eff7; // SKYBLUE WHITE
+  $color-8: #4caf50; // GREEN
+  $color-9: #ffbc00; // YELLOW
+  $color-10: #ea520d; // RED
+  $color-11: #673ab7; // PURPLE
+  $color-12: #9c27b0; // VIOLET
+  $color-13: #009688; // TURQUOISE
+  $color-14: #ebebeb; // SUBT-FORM BG-COLOR - LIGHTBLUE
+  $color-15: #d4eafc; // BG COLOR FOCUS
+  $color-16: #50bcf9; // ITERACION DE FOCOS
+
+  &.color-1{ 
+    background: $color-5;
+    background-color: $color-5;
+    border: 1px solid $color-5;
+    &:before {
+      border-right: 12px solid $color-5;
+    }
+  }
+  &.color-2{ 
+    background: $color-8;
+    background-color: $color-8;
+    border: 1px solid $color-8;
+    &:before {
+      border-right: 12px solid $color-8;
+    }
+  }
+  &.color-3{ 
+    background: $color-11;
+    background-color: $color-11;
+    border: 1px solid $color-11;
+    &:before {
+      border-right: 12px solid $color-11;
+    }
+  }
+  &.color-4{ 
+    background: $color-4;
+    background-color: $color-4;
+    border: 1px solid $color-4;
+    &:before {
+      border-right: 12px solid $color-4;
+    }
+  }
+  &.color-5{ 
+    background: $color-13;
+    background-color: $color-13;
+    border: 1px solid $color-13;
+    &:before {
+      border-right: 12px solid $color-13;
+    }
+  }
+  &.color-6{ 
+    background: $color-2;
+    background-color: $color-2;
+    border: 1px solid $color-2;
+    &:before {
+      border-right: 12px solid $color-2;
+    }
+  }
+  &.color-7{ 
+    background: $color-9;
+    background-color: $color-9;
+    border: 1px solid $color-9;
+    &:before {
+      border-right: 12px solid $color-9;
+    }
+  }
+  &.color-8{ 
+    background: $color-10;
+    background-color: $color-10;
+    border: 1px solid $color-10;
+    &:before {
+      border-right: 12px solid $color-10;
+    }
+  }
+  &.lg {
+    height: 28px;
+  }
+  &.sm {
+    height: 24px;
+  }
+  > span {
+    color: $white;
+    font-size: 12px;
+    margin-right: 6px;
+  }
+}

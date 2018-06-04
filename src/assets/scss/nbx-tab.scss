@@ -1,0 +1,225 @@
+//IMPORT GENERAL MIXINS AND CLASSES
+@import "_mixins.scss";
+.nbx-tab {
+    position: relative;
+    .tabs {
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        @include nbx-cero;
+    }
+    .panel-section {
+        display: none;
+    }
+    &.nbx-panel {
+        @include nbx-flex-alt;
+        justify-content: flex-start;
+        align-items: flex-start;
+        .panel-section {
+            @include nbx-cero;
+            @include nbx-roboto;
+            z-index: 0;
+            color: $black;
+            font-size: 13px;
+            background-color: $white;
+            margin-top: -1px; //height: auto;
+            display: block;
+            width: 100%;
+            //overflow-y: auto;
+            position: relative;
+            &:before {
+                display: none;
+            }
+            border: 1px solid $gray-2;
+            .container-tab {
+                margin-right: 20px;
+                margin-left: 20px;
+                margin-top: 30px;
+                margin-bottom: 30px;
+                display: block;
+                .cnt-nbx-grid {
+                    margin-top: 10px;
+                    border: 0px;
+                }
+            }
+        }
+        &.full-height {
+            .panel-section {
+                height: 100%!important;
+                .container-tab {
+                    height: 100%;
+                }
+            }
+        }
+    }
+    &.vertical {
+        .tabs {
+            .tab-ul {
+                @include nbx-cero;
+                @include nbx-clean-list;
+                @include nbx-webkit-reset;
+                @include nbx-roboto;
+                font: {
+                    size: 13px;
+                    weight: 400;
+                }
+                border-top: 1px solid $gray-2;
+                border-left: 1px solid $gray-2;
+                border-bottom: 1px solid $gray-2;
+                .tab-li {
+                    cursor: pointer;
+                    height: 40px;
+                    background-color: $gray-17;
+                    border-bottom: 1px solid $gray-2;
+                    padding: 0px 10px 0px 16px;
+                    @include nbx-flex-alt;
+                    align-items: flex-start;
+                    overflow: hidden;
+                    position: relative;
+                    &:last-of-type {
+                        border-bottom: 0px;
+                    }
+                    .content {
+                        color: $gray-15;
+                        padding: 3px;
+                        @include nbx-flex-common;
+                        justify-content: flex-start;
+                        label.badge {
+                            font-weight: 400;
+                            padding-left: 6px;
+                        }
+                    }
+                    outline: 0;
+                    outline: none;
+                    &[aria-pressed="false"],
+                    [role=button][aria-pressed="false"] {
+                        outline: 0;
+                        outline: none;
+                        box-shadow: none;
+                        .content {
+                            outline: 0;
+                            outline: none;
+                            box-shadow: none;
+                        }
+                    }
+                    &.active {
+                        background-color: $white;
+                        .content {
+                            color: $black;
+                            background-color: $white;
+                            &:after {
+                                color: $color-2;
+                                content: "|";
+                                font-size: 80px;
+                                position: absolute;
+                                top: -20px;
+                                left: -7px;
+                            }
+                        }
+                    }
+                    &.disabled {
+                        cursor: disabled;
+                    }
+                }
+            }
+        }
+    }
+    &.horizontal {
+        .tabs {
+            .tab-ul {
+                @include nbx-cero;
+                @include nbx-clean-list;
+                @include nbx-webkit-reset;
+                @include nbx-flex-common;
+                border-top: 1px solid $gray-2;
+                border-left: 1px solid $gray-2;
+                border-right: 1px solid $gray-2;
+                .tab-li {
+                    cursor: pointer;
+                    height: 55px;
+                    background-color: $gray-17;
+                    border-right: 1px solid $gray-2;
+                    border-bottom: 1px solid $gray-2;
+                    padding: 0px 30px 0px 30px;
+                    @include nbx-flex-alt;
+                    overflow: hidden;
+                    position: relative;
+                    outline: 0;
+                    outline: none;
+                    &:last-of-type {
+                        border-right: 0px;
+                    }
+                    &.focus {
+                      .content {
+                        background-color: $color-15;
+                        .row {
+                          box-shadow: 0px 0px 0px 12px $color-15, 0px 0px 0px 14px $color-5;
+                        }
+                      }
+                    }
+                    .content {
+                        padding: 3px;
+                        span.text {
+                            color: $gray-15;
+                            @include nbx-roboto;
+                            font: {
+                                size: 17px;
+                                weight: 600;
+                            }
+                            text: {
+                                align: center;
+                                transform: capitalize;
+                            }
+                        }
+                        label.icon {
+                            display: inline-block;
+                            background-color: $gray-15;
+                            color: $white;
+                            border-radius: 2px;
+                            margin-left: 6px;
+                            width: 20px;
+                            height: 20px;
+                            font-size: 13px;
+                            line-height: 20px;
+                            @include nbx-roboto;
+                            text-align: center;
+                            font-weight: 600;
+                        }
+                        span.note {
+                            display: block;
+                            @include nbx-roboto;
+                            font: {
+                                size: 13px;
+                                weight: 500;
+                            }
+                            text: {
+                                align: center;
+                            }
+                            color: $gray-16;
+                            margin-top: 4px;
+                        }
+                    }
+                    &.disabled {
+                        cursor: disabled;
+                    }
+                    &.active {
+                        background-color: $white;
+                        border-top: 1px solid $white;
+                        border-bottom: 1px solid $white;
+                        .content {
+                            span.note {
+                                color: $gray-13;
+                            }
+                            span.text {
+                                color: $color-3;
+                            }
+                            label.icon {
+                                background-color: $color-5;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

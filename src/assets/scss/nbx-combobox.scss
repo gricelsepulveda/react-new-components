@@ -1,0 +1,369 @@
+//IMPORT GENERAL MIXINS AND CLASSES
+@import "_mixins.scss";
+
+// COMPONENT COMBOBOX
+.nbx-combobox {
+  display: block;
+  position: relative;
+  border: 1px solid $gray-2;
+  background-color: $white;
+  border-radius: 0px 4px 4px 0px;
+  box-sizing: border-box;
+  @include nbx-animate;
+  &.sm {
+    height: 28px;
+    button.nbx-combobox-button {
+      height: 28px;
+      width: 28px;
+    }
+    input.nbx-combobox-input {
+      height: 28px;
+      padding-right: 32px;
+      width: calc(100% - 36px);
+      outline: none;
+    }
+  }
+  &.lg {
+    height: 32px;
+    input.nbx-combobox-input {
+      height: 32px;
+      padding-right: 36px;
+      width: calc(100% - 40px);
+    }
+    button.nbx-combobox-button {
+      height: 32px;
+      width: 32px;
+    }
+  }
+  input.nbx-combobox-input {
+    color: $black;
+    font-size: 13px;
+    background-color: transparent;
+    border: none;
+    padding-left: 6px;
+    display: inline-block;
+    position: relative;
+  }
+  button.nbx-combobox-button {
+    position: absolute;
+    top: -1px;
+    right: -2px;
+    border: 1px solid $gray-2;
+    background-color: $white;
+    cursor: pointer;
+    @include nbx-animate;
+    @include nbx-flex-common;
+    border-radius: 0px 4px 4px 0px;
+    &:hover, &:focus, &:active {
+      outline: none;
+    }
+    &:hover {
+      background-color: $color-3;
+      &:before {
+        color: $white;
+      }
+    }
+    &:before {
+      font-size: 14px;
+      @include nbx-nubox;
+      color: $black;
+      margin-top: 1px;
+    }
+  }
+  .wrapper-combobox-list {
+    width: calc(100% + 3px);
+    position: absolute;
+    left: -1px;
+    height: 0px;
+    overflow: hidden;
+    z-index: 20;
+    ul.nbx-combobox-list {
+      display: block;
+      height: auto;
+      position: relative;
+      background-color: $white;
+      background: $white;
+      width: 100%;
+      height: 100px;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      list-style: none;
+      list-style-image: none;
+      list-indent: 0;
+      list-style-position: outside;
+      padding-left: 0;
+      box-sizing: border-box;
+      border: 1px solid $gray-2;
+      -webkit-margin-after: 0;
+      -webkit-margin-before: 0;
+      li.nbx-combobox-li {
+        @include nbx-flex-common;
+        justify-content: flex-start;
+        padding: 0px 21px 0px 6px;
+        height: 28px;
+        cursor: pointer;
+        @include nbx-roboto;
+        @include nbx-animate;
+        font-size: 13px;
+        font-weight: 400;
+        text: {
+          align: left;
+          transform: uppercase;
+        }
+        color: $black;
+        &:last-of-type {
+          border-bottom: 0px;
+        }
+        &:hover {
+          background-color: $color-7;
+          background: $color-7;
+        }
+        &:focus, &:active {
+          outline: 0;
+          outline: none;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+  &.up
+  {
+    .wrapper-combobox-list {
+      top: -100px;
+    }
+    button.nbx-combobox-button { 
+      &:before {
+        content: "\e948";
+      }
+    }
+  }
+  &.down {
+    .wrapper-combobox-list {
+      bottom: -100px;
+    }
+    button.nbx-combobox-button { 
+      &:before {
+        content: "\e90a";
+      }
+    }
+  }
+  &.disabled {
+    button.nbx-combobox-button{
+      background-color: lighten($gray-3, 10%);
+      background: ligthen($gray-3, 10%);
+      border: 1px solid $gray-2;
+      color: $gray-15;
+      &[disabled]{
+        background-color: lighten($gray-3, 10%);
+        background: lighten($gray-3, 10%);
+        border: 1px solid $gray-2;
+        &:before{
+          color: $gray-15;
+        }
+        &:hover {
+          background-color: ligthen($gray-3, 10%);
+          border: 1px solid $gray-2;
+          &:before{
+            color: $gray-15;
+          }
+        }
+      }
+    }
+    background-color: darken($white, 7.5%);
+    background: darken($white, 7.5%);
+  }
+  &.base-line{
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+    border-bottom: 1px solid $gray-2;
+    background: transparent;
+    &:hover {
+      border-bottom: 1px solid $color-3;
+    }
+    button.nbx-combobox-button {
+      background-color: transparent;
+      background: transparent;
+      border: 1px solid transparent;
+      &:before {
+        color: $color-3;
+      }
+      &:hover{
+        background: transparent;
+        background-color: transparent;
+        border: 1px solid transparent;
+        &:before {
+          color: $color-3;
+        }
+      }
+    }
+    &[aria-pressed="false"], [role=button][aria-pressed="false"]{
+      input.nbx-combobox-input {
+        outline: 0;
+        outline: none;
+        box-shadow: none;
+      }
+    }
+    &[aria-pressed="true"], [role=button][aria-pressed="true"]{
+      input.nbx-combobox-input {
+        outline: 0;
+        outline: none;
+        box-shadow: none;
+      }
+      border-top: 0;
+      border-left: 0;
+      border-right: 0;
+      border-radius: 0;
+      border-bottom: 1px solid $color-3;
+      background: transparent;
+      button.nbx-combobox-button {
+        background: transparent;
+        background-color: transparent;
+        border: 1px solid transparent;
+        &:before {
+          color: $color-3;
+        }
+      }
+    }
+    &:focus {
+      input.nbx-combobox-input {
+        outline: 0;
+        outline: none;
+        box-shadow: none;
+      }
+      border-top: 0;
+      border-left: 0;
+      border-right: 0;
+      border-radius: 0;
+      border-bottom: 1px solid $color-3;
+      background: transparent;
+      button.nbx-combobox-button {
+        background: transparent;
+        background-color: transparent;
+        border: 1px solid transparent;
+        &:before {
+          color: $color-3;
+        }
+      }
+    }
+    &:active {
+      input.nbx-combobox-input {
+        outline: 0;
+        outline: none;
+        box-shadow: none;
+      }
+      border-top: 0;
+      border-left: 0;
+      border-right: 0;
+      border-radius: 0;
+      border-bottom: 1px solid $color-3;
+      background: transparent;
+      button.nbx-combobox-button {
+        background: transparent;
+        background-color: transparent;
+        border: 1px solid transparent;
+        &:before {
+          color: $color-3;
+        }
+      }
+    }
+    &.disabled {
+      border-top: 0;
+      border-left: 0;
+      border-right: 0;
+      border-radius: 0;
+      border-bottom: 1px solid $gray-2;
+      background: transparent;
+      button.nbx-combobox-button{
+        background-color: lighten($gray-3, 10%);
+        background: ligthen($gray-3, 10%);
+        border: 1px solid lighten($gray-3, 5%);
+        &:hover{
+          background: transparent;
+          background-color: transparent;
+          border: 1px solid transparent;
+          &:before {
+            color: $gray-15;
+          }
+        }
+        &[disabled]{
+          background-color: transparent;
+          background: transparent;
+          border: 1px solid transparent;
+          &:before {
+            color: $gray-15;
+          }
+          &:hover{
+            background: transparent;
+            background-color: transparent;
+            border: 1px solid transparent;
+            &:before {
+              color: $gray-15;
+            }
+          }
+        }
+      }
+      background-color: transparent;
+      background: transparent;
+    }
+  }
+  outline: 0;
+  outline: none;
+  &[aria-pressed="false"], [role=button][aria-pressed="false"]{
+    input.nbx-combobox-input {
+      outline: 0;
+      outline: none;
+      box-shadow: none;
+    }
+  }
+  &[aria-pressed="true"], [role=button][aria-pressed="true"]{
+    input.nbx-combobox-input {
+      outline: 0;
+      outline: none;
+      box-shadow: none;
+    }
+    border: 1px solid $color-3;
+    button.nbx-combobox-button {
+      border: 1px solid $color-3;
+      background-color: $color-3;
+      &:before {
+        color: $white;
+      }
+    }
+  }
+  &:focus {
+    input.nbx-combobox-input {
+      outline: 0;
+      outline: none;
+      box-shadow: none;
+    }
+    button.nbx-combobox-button {
+      border: 1px solid $color-3;
+      background-color: $color-3;
+      &:before {
+        color: $white;
+      }
+    }
+    border: 1px solid $color-3;
+  }
+  &:active {
+    input.nbx-combobox-input {
+      outline: 0;
+      outline: none;
+      box-shadow: none;
+    }
+    button.nbx-combobox-button {
+      border: 1px solid $color-3;
+      background-color: $color-3;
+      &:before {
+        color: $white;
+      }
+    }
+    border: 1px solid $color-3;
+  }
+}
+
+
+
+

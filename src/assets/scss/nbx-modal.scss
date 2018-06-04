@@ -1,0 +1,190 @@
+//IMPORT GENERAL MIXINS AND CLASSES
+@import "_mixins.scss";
+@import "_animation.scss";
+//BACKGROUND MODAL
+.nbx-modal {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    z-index: 99991;
+    position: fixed;
+    top: 0;
+    left: 0;
+    &.on {
+        display: block;
+    }
+    &.width-dialog {
+        .modal {
+            width: 450px;
+        }
+    }
+    &.width-lg {
+        .modal {
+            width: 1300px;
+        }
+    }
+    &.width-md {
+        .modal {
+            width: 960px;
+        }
+    }
+    &.width-slg {
+        .modal {
+            width: 990px;
+        }
+    }
+    &.width-sm {
+        .modal {
+            width: 640px;
+        }
+    }
+    &.width-xs {
+        .modal {
+            width: 480px;
+        }
+    }
+    &.height-lg {
+        .modal {
+            min-height: 630px;
+            max-height: 630px;
+            height: 630px;
+            .modal-body {
+                min-height: 525px;
+                max-height: 525px;
+                height: 525px;
+            }
+        }
+    }
+    &.height-md {
+        .modal {
+            min-height: 480px;
+            max-height: 480px;
+            height: 480px;
+            .modal-body {
+                min-height: 375px;
+                max-height: 375px;
+                height: 375px;
+            }
+        }
+    }
+    &.height-sm {
+        .modal {
+            min-height: 360px;
+            max-height: 360px;
+            height: 360px;
+        }
+        .modal-body {
+            min-height: 255px;
+            max-height: 255px;
+            height: 255px;
+        }
+    }
+    &.height-xs {
+        .modal {
+            min-height: 240px;
+            max-height: 240px;
+            height: 240px;
+        }
+        .modal-body {
+            min-height: 135px;
+            max-height: 135px;
+            height: 135px;
+        }
+    }
+}
+
+.bg-modal {
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper-modal {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 11;
+    @include nbx-flex-common;
+}
+
+.modal {
+    background-color: $white;
+    padding: 16px;
+    @include nbx-box-shadow;
+    @include nbx-border-lg;
+    @include animation-bounce($inline: false);
+    z-index: 12;
+    &:focus, &:active {
+      border: none;
+      outline: none;
+    }
+    &.react-draggable {
+      transition: opacity 0.2s ease, box-shadow 0.25s ease-in-out;
+      &.react-draggable-dragging {
+        margin: 5px;
+        user-select: none;
+        opacity: 0.95;
+        box-shadow: 0 0 0 3px $color-6, 0 0 0 5px $color-5;
+      }
+    }
+    .modal-header {
+        position: relative;
+        margin-bottom: 24px;
+        cursor: move;
+        .nubox-error {
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 18px;
+            color: $color-3;
+            cursor: pointer;
+            padding-left: 1px;
+            transition: color 200ms ease;
+            &:hover {
+                color: $color-10;
+            }
+            &.focus {
+              box-shadow: 0px 0px 0px 6px $color-15;
+              border-radius: 30px;
+            }
+        }
+        h2.modal-title {
+            color: $color-3;
+            @include nbx-webkit-reset;
+            @include nbx-roboto;
+            font: {
+                size: 17px;
+                weight: 600;
+            }
+            width: calc(100% - 24px);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+    .modal-body {
+        max-height: 495px;
+        p {
+            color: $black;
+            @include nbx-roboto;
+            font: {
+                size: 13px;
+                weight: 400;
+            }
+        }
+    }
+    .modal-footer {
+        @include nbx-flex-common;
+        padding-top: 32px;
+        justify-content: flex-end;
+        button {
+            margin-right: 8px;
+            //z-index: -1;
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+    }
+}

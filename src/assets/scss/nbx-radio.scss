@@ -1,0 +1,196 @@
+//IMPORT GENERAL MIXINS AND CLASSES
+@import "_mixins.scss";
+.nbx-radio {
+  outline: none;
+  outline: 0;
+  margin-left: -4px;
+  padding-left: 4px;
+  margin-top: 10px;
+  &:before {
+    content: "\00a0\00a0";
+    transition: opacity 200ms ease;
+    opacity: 0;
+    position: absolute;
+    margin-left: -4px;
+    word-spacing: 10px;
+    background: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMCAzMCI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiNkNWVkZmY7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT5yYWRpby1jdXQ8L3RpdGxlPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTE1LDZhOSw5LDAsMSwxLTksOSw5LDksMCwwLDEsOS05bTAtNkExNSwxNSwwLDEsMCwzMCwxNSwxNSwxNSwwLDAsMCwxNSwwWiIvPjwvc3ZnPg==);
+    background: {
+      position: 0px 11px;
+      repeat: no-repeat;
+      size: 24px 24px;
+    }
+  }
+  &.focus:before {
+    opacity: 1;
+  }
+  .wrapper-radio {
+    width: 16px;
+    height: 16px;
+    + label {
+      cursor: pointer;
+    }
+  }
+  input.input-radio[type="radio"]:not(:checked),
+  input.input-radio[type="radio"]:checked {
+    position: absolute;
+    display: none;
+    outline: none;
+    outline: 0;
+    @include nbx-animate;
+    //AVOID FOCUS BROWSER STYLES
+    &:focus, &:active{
+      outline: 0;
+      box-shadow: 0;
+      border: 0;
+    }
+  }
+  input.input-radio[type="radio"]:not(:checked)+label.label-radio,
+  input.input-radio[type="radio"]:checked+label.label-radio {
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    outline: 0;
+    //AVOID FOCUS BROWSER STYLES
+    &:focus, &:active{
+      outline: 0;
+      box-shadow: 0;
+      border: 0;
+    }
+  } //RADIO DESIGN
+  input.input-radio[type="radio"]:not(:checked)+label.label-radio:before,
+  input.input-radio[type="radio"]:checked+label.label-radio:before {
+    font-family: 'Nubox'!important;
+    content: '\e928';
+    font-size: 16px;
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    color: $color-3;
+    outline: none;
+    outline: 0;
+    font-weight: 400;
+    //AVOID FOCUS BROWSER STYLES
+    &:focus, &:active{
+      outline: 0;
+      box-shadow: 0;
+      border: 0;
+    }
+  }
+  input.input-radio[type="radio"]:not(:checked)+label.label-radio:after,
+  input.input-radio[type="radio"]:checked+label.label-radio:after {
+    content: "";
+    outline: none;
+    outline: 0;
+    //AVOID FOCUS BROWSER STYLES
+    &:focus, &:active{
+      outline: 0;
+      box-shadow: 0;
+      border: 0;
+    }
+  } //RADIO SELECTED DESIGN
+  input.input-radio[type="radio"]:not(:checked)+label.label-radio:after,
+  input.input-radio[type="radio"]:checked+label.label-radio:after {
+    font-family: 'Nubox'!important;
+    content: '\e927';
+    position: absolute;
+    top: 5px;
+    left: 0;
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    color: $color-3;
+    outline: none;
+    outline: 0;
+    font-weight: 400;
+    //AVOID FOCUS BROWSER STYLES
+    &:focus, &:active{
+      outline: 0;
+      box-shadow: 0;
+      border: 0;
+    }
+  } // CHECKED MARK ASPECT CHANGE
+  input.input-radio[type="radio"]:not(:checked)+label.label-radio:after {
+    opacity: 0;
+    transform: scale(0);
+    outline: none;
+    outline: 0;
+    //AVOID FOCUS BROWSER STYLES
+    &:focus, &:active{
+      outline: 0;
+      box-shadow: 0;
+      border: 0;
+    }
+  }
+  input.input-radio[type="radio"]:checked+label.label-radio:after {
+    opacity: 1;
+    transform: scale(1);
+    outline: none;
+    outline: 0;
+    //AVOID FOCUS BROWSER STYLES
+    &:focus, &:active{
+      outline: 0;
+      box-shadow: 0;
+      border: 0;
+    }
+  } // DISABLED CHECK
+  input.input-radio[type="radio"]:disabled:not(:checked)+label.label-radio:before,
+  input.input-radio[type="radio"]:disabled:checked+label.label-radio:before {
+    color: $gray-15;
+    outline: none;
+    outline: 0;
+    cursor: none;
+    //AVOID FOCUS BROWSER STYLES
+    &:focus, &:active{
+      outline: 0;
+      box-shadow: 0;
+      border: 0;
+    }
+  }
+  input.input-radio[type="radio"]:disabled:checked+label.label-radio:after {
+    color: $gray-15;
+    outline: none;
+    outline: 0;
+    cursor: none;
+    //AVOID FOCUS BROWSER STYLES
+    &:focus, &:active{
+      outline: 0;
+      box-shadow: 0;
+      border: 0;
+    }
+  }
+  input.input-radio[type="radio"]:disabled+label.label-radio {
+    color: $gray-15;
+    outline: none;
+    outline: 0;
+    cursor: none;
+    //AVOID FOCUS BROWSER STYLES
+    &:focus, &:active{
+      outline: 0;
+      box-shadow: 0;
+      border: 0;
+    }
+  } // ACCESIBILITY
+  input.input-radio[type="radio"]:checked:focus+label.label-radio:before,
+  input.input-radio[type="radio"]:not(:checked):focus+label.label-radio:before {
+    outline: none;
+    outline: 0;
+    //AVOID FOCUS BROWSER STYLES
+    &:focus, &:active{
+      outline: 0;
+      box-shadow: 0;
+      border: 0;
+    }
+  }
+}
+
+
+// FIREFOX
+
+html[data-useragent*="Firefox"]{
+  input.input-radio[type="radio"]:not(:checked)+label.label-radio:after,
+  input.input-radio[type="radio"]:checked+label.label-radio:after {
+    top: 4px;
+  }
+}

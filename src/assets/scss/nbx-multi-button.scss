@@ -1,0 +1,497 @@
+//IMPORT GENERAL MIXINS AND CLASSES
+@import "_mixins.scss";
+
+// PARTICULAR CLASSES
+.nbx-multi-button
+{
+  position: relative;
+  &.normal {
+    button.button-multibutton {
+      background: $color-3;
+      background-color: $color-3;
+      border: 1px solid $color-3;
+      &:hover {
+        background: lighten($color-3, 10%);
+        background-color: lighten($color-3, 10%);
+      }
+    }  
+  }
+  &.highlight {
+    button.button-multibutton {
+      background: $color-2;
+      background-color: $color-2;
+      border: 1px solid $color-2;
+      &:hover {
+        background: lighten($color-2, 10%);
+        background-color: lighten($color-2, 10%);
+      }
+    }
+  }
+  &.disabled {
+    button.button-multibutton {
+      background: $gray-17;
+      background-color: $gray-17;
+      border: 1px solid $gray-16;
+      color: $gray-15;
+      box-shadow: none;
+      &:hover {
+        background: darken($gray-17, 10%);
+        background-color: darken($gray-17, 10%);
+        color: $gray-15;
+      }
+    }
+  }
+  &.lg {
+    button.button-multibutton {
+      height: 32px;
+      > span {
+        margin-top: 0px;
+        width: 36px;
+        height: 30px;
+        border-left: 1px solid $white;
+        font-size: 12px;
+        font-family: 'Nubox'!important;
+        margin-left: 3px;
+        @include nbx-flex-common;
+        box-sizing: border-box;
+      }
+      .nubox-descargar {
+        margin-right: 6px;
+        font-size: 11px;
+      }
+      .multibutton-icon {
+        height: 25px;
+        width: 100%;
+        line-height: 23px;
+        border-radius: 2px;
+      }
+    }
+  }
+  &.sm {
+    button.button-multibutton {
+      height: 28px;
+      > span {
+        margin-top: 0px;
+        width: 28px;
+        height: 23px;
+        font-size: 12px;
+        font-family: 'Nubox'!important;
+        margin-left: 3px;
+        margin-right: 2px;
+        @include nbx-flex-common;
+        box-sizing: border-box;
+        border-left: 1px solid $white;
+        &:before {
+          padding-left: 2px;
+        }
+      }
+      .nubox-descargar {
+        margin-right: 6px;
+        font-size: 11px;
+      }
+      /*&:before{
+        display:block;
+        width: 1px;
+        height: 26px;
+        right: 26px;
+        top: 0px;
+        position: absolute;
+        background-color: white;
+      }*/
+    }
+    .multibutton-icon {
+      height: 21px;
+      width: 100%;
+      line-height: 22px;
+      border-radius: 2px;
+    }
+  }
+  &#nuevo-multibutton {
+      display: flex;
+      align-items: center;
+  }
+  button.button-multibutton {
+    color: $white;
+    box-sizing: border-box; 
+    cursor: pointer;
+    //padding: 0px 0px 2px 10px;
+    padding-right: 0px;
+    padding-left: 2px;
+    display: inline-block;
+    position: relative;
+    @include nbx-flex-common;
+    @include nbx-animate;
+    @include nbx-border-sm;
+    @include nbx-box-shadow;
+    @include nbx-roboto;
+    font: {
+      size: 11px;
+      weight: 600;
+    }
+    text: {
+      align: center;
+      transform: uppercase;
+    }
+    .multibutton-icon {
+      padding-left: 3px;
+      padding-right: 3px;
+    }
+  }
+  .wrapper-multibutton {
+    height: auto;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    //overflow: hidden;
+    display: none;
+    .ul-multibutton {
+      @include nbx-flex-alt;
+      @include nbx-webkit-reset;
+      @include nbx-clean-list;
+      padding-left: 0;
+      border: 1px solid $hover-gray;
+      background-color: $white;
+      position: relative;
+      width: 100%;
+      @include nbx-box-shadow-popover;
+      .li-multibutton {
+        width: 100%;
+        &:last-of-type {
+          border-bottom: 0;
+        }
+        button.multibutton {
+          @include nbx-flex-common;
+          justify-content: flex-start; 
+          height: 42px;
+          border: none;
+          background-color: transparent;
+          background: transparent;
+          width: 100%;
+          border-radius: 0;
+          @include nbx-roboto;
+          @include nbx-animate;
+          font: {
+            size: 13px;
+            weight: 400;
+          }
+          color: $soft-black;
+          padding: 0px 16px 0px 16px;
+          cursor: pointer;
+          text: {
+            align: left;
+            transform: capitalize;
+          }
+          span {
+            color: $gray-4;
+            font-size: 15px;
+            vertical-align: text-bottom;
+            margin-right: 6px;
+          }
+          span.mid {
+            font-size: 18px;
+            margin-left: 0px;
+            margin-right: 4px;
+          }
+          span.xl {
+            font-size: 18px;
+            margin-right: 4px;
+            vertical-align: top;
+          }
+          &:hover, &:focus {
+            background-color: darken($white, 10%);
+            border-radius: 0;
+          }
+          outline: none;
+          &:hover, &:active, &:focus {
+            outline: none;
+          }
+          .content {
+            padding: 3px;
+          }
+          &[aria-pressed="false"], [role=button][aria-pressed="false"]{
+            outline: 0;
+            outline: none;
+            box-shadow: none;
+            .content {
+              outline: 0;
+              outline: none;
+              box-shadow: none;
+            }
+          }
+          &[aria-pressed="true"], [role=button][aria-pressed="true"]{
+            outline: 0;
+            outline: none;
+            box-shadow: none;
+            .content {
+              box-shadow: 0 0 0 3px $color-6 , 0 0 0 5px $color-5;
+              transition: box-shadow 200ms ease;
+            }
+          }
+          &:focus {
+            outline: 0;
+            outline: none;
+            box-shadow: none;
+            .content {
+              box-shadow: 0 0 0 3px $color-6 , 0 0 0 5px $color-5;
+              transition: box-shadow 200ms ease;
+            }
+          }
+          &:active {
+            outline: 0;
+            outline: none;
+            box-shadow: none;
+          }
+        }
+      }
+    }
+  }
+  //DROP UP 
+  .drop-up {
+    .wrapper-multibutton {
+      top: initial;
+      bottom: 100%;
+    }
+  }
+  //ESITLOS DE ANCHO ANTIGUOS BORRAR DSPS
+  &.wrapper-xs {
+    .wrapper-multibutton {
+      width: 120px;
+    }
+  }
+  &.wrapper-sm {
+    .wrapper-multibutton {
+      width: 160px;
+    }
+  }
+  &.wrapper-md {
+    .wrapper-multibutton {
+      width: 200px;
+    }
+  }
+  &.wrapper-lg {
+    .wrapper-multibutton {
+      width: 250px;
+    }
+  }
+  //FIN BORRAR ESTILOS DE ANCHO ANTIGUOS
+  //INICIO DE ESTILOS QUE DEFINEN ANCHO DE LOS DROPDOWN
+  &.list-width-100 {
+    .wrapper-multibutton {
+      width: 100px;
+    }
+  }
+  &.list-width-110 {
+    .wrapper-multibutton {
+      width: 110px;
+    }
+  }
+  &.list-width-120 {
+    .wrapper-multibutton {
+      width: 120px;
+    }
+  }
+  &.list-width-130 {
+    .wrapper-multibutton {
+      width: 130px;
+    }
+  }
+  &.list-width-140 {
+    .wrapper-multibutton {
+      width: 140px;
+    }
+  }
+  &.list-width-150 {
+    .wrapper-multibutton {
+      width: 150px;
+    }
+  }
+  &.list-width-160 {
+    .wrapper-multibutton {
+      width: 160px;
+    }
+  }
+  &.list-width-170 {
+    .wrapper-multibutton {
+      width: 170px;
+    }
+  }
+  &.list-width-180 {
+    .wrapper-multibutton {
+      width: 180px;
+    }
+  }
+  &.list-width-190 {
+    .wrapper-multibutton {
+      width: 190px;
+    }
+  }
+  &.list-width-200 {
+    .wrapper-multibutton {
+      width: 200px;
+    }
+  }
+  &.list-width-210 {
+    .wrapper-multibutton {
+      width: 210px;
+    }
+  }
+  &.list-width-220 {
+    .wrapper-multibutton {
+      width: 220px;
+    }
+  }
+  &.list-width-230 {
+    .wrapper-multibutton {
+      width: 230px;
+    }
+  }
+  &.list-width-240 {
+    .wrapper-multibutton {
+      width: 240px;
+    }
+  }
+  &.list-width-250 {
+    .wrapper-multibutton {
+      width: 250px;
+    }
+  }
+  &.list-width-260 {
+    .wrapper-multibutton {
+      width: 260px;
+    }
+  }
+  &.list-width-270 {
+    .wrapper-multibutton {
+      width: 270px;
+    }
+  }
+  &.list-width-280 {
+    .wrapper-multibutton {
+      width: 280px;
+    }
+  }
+  &.list-width-290 {
+    .wrapper-multibutton {
+      width: 290px;
+    }
+  }
+  &.list-width-300 {
+    .wrapper-multibutton {
+      width: 300px;
+    }
+  }
+  &.list-width-310 {
+    .wrapper-multibutton {
+      width: 310px;
+    }
+  }
+  &.list-width-320 {
+    .wrapper-multibutton {
+      width: 320px;
+    }
+  }
+  &.list-width-330 {
+    .wrapper-multibutton {
+      width: 330px;
+    }
+  }
+  &.list-width-340 {
+    .wrapper-multibutton {
+      width: 340px;
+    }
+  }
+  &.list-width-350 {
+    .wrapper-multibutton {
+      width: 350px;
+    }
+  }
+  &.list-width-360 {
+    .wrapper-multibutton {
+      width: 360px;
+    }
+  }
+  &.list-width-370 {
+    .wrapper-multibutton {
+      width: 370px;
+    }
+  }
+  &.list-width-380 {
+    .wrapper-multibutton {
+      width: 380px;
+    }
+  }
+  &.list-width-390 {
+    .wrapper-multibutton {
+      width: 390px;
+    }
+  }
+  &.list-width-400 {
+    .wrapper-multibutton {
+      width: 400px;
+    }
+  }
+  &.list-width-410 {
+    .wrapper-multibutton {
+      width: 410px;
+    }
+  }
+  &.list-width-420 {
+    .wrapper-multibutton {
+      width: 420px;
+    }
+  }
+  &.list-width-430 {
+    .wrapper-multibutton {
+      width: 430px;
+    }
+  }
+  &.list-width-440 {
+    .wrapper-multibutton {
+      width: 440px;
+    }
+  }
+  &.list-width-450 {
+    .wrapper-multibutton {
+      width: 450px;
+    }
+  }
+  &.list-width-460 {
+    .wrapper-multibutton {
+      width: 460px;
+    }
+  }
+  &.list-width-470 {
+    .wrapper-multibutton {
+      width: 470px;
+    }
+  }
+  &.list-width-480 {
+    .wrapper-multibutton {
+      width: 480px;
+    }
+  }
+  &.list-width-490 {
+    .wrapper-multibutton {
+      width: 490px;
+    }
+  }
+  &.list-width-500 {
+    .wrapper-multibutton {
+      width: 500px;
+    }
+  }
+  //FIN DE ESILOS QUE DEFINEN ANCHO DE LOS DROPDOWN
+  &.wrapper-nuevo {
+    .wrapper-multibutton {
+      top: 44px;
+      left: -51px;
+      width: 144px;
+    }
+  }
+  &.focus, &:focus {
+    border-radius: 2px;
+    box-shadow:0px 0px 0px 4px $gray-12, 0px 0px 0px 6px $color-5;
+  }
+}

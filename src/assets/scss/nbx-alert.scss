@@ -1,0 +1,167 @@
+//IMPORT GENERAL MIXINS AND CLASSES
+@import "_mixins.scss";
+
+//WRAPPER TO INITIALIZE THE ALERT STACKS
+
+.wrapper-alert {
+  position: fixed;
+  top: 20;
+  left: 0;
+  width: 100vw;
+  height: 1px;
+  max-height: 1px;
+  z-index: 999992;
+  @include nbx-flex-common;
+  .alerts {
+    @include nbx-flex-alt;
+    width: 350px;
+    position: absolute;
+    top: 0px;
+    padding-bottom: 5px;
+    @include nbx-zindex-max;
+    > span {
+      margin-bottom: 24px;
+      &:last-of-type {
+        margin-bottom: 0px;
+      }
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+html[data-useragent*="Firefox"] {
+  .wrapper-alert {
+    .alerts {
+      left: calc(50vw - 175px);
+    }
+  }
+}
+
+//ALERT 
+
+.nbx-alert {
+  width: 300px;
+  border-radius: 3px;
+  @include nbx-box-shadow;
+  position: relative;
+  @include nbx-flex-common;
+  justify-content: space-between;
+  //display: none;
+  //opacity: 0;
+  &:focus {
+    outline: 0;
+  }
+  span.nuboxFont.nubox-cerrar {
+    display: none;
+  }
+  &.success {
+    background-color: $color-8;
+    .icon-alert {
+      background-color: $color-8;
+    }
+  }
+  &.warning {
+    background-color: $color-9;
+    .icon-alert {
+      background-color: $color-9;
+    }
+  }
+  &.danger {
+    background-color: $color-10;
+    .icon-alert {
+      background-color: $color-10;
+    }
+  }
+  &.notification {
+    background-color: $color-8;
+    .icon-alert {
+      background-color: $color-8;
+    }
+  }
+  &.message {
+    background-color: $color-8;
+    .icon-alert {
+      background-color: $color-8;
+    }
+  }
+  &.close {
+    span.nuboxFont.nubox-cerrar {
+      display: inline-block;
+      font-size: 16px;
+      color: $gray-15;
+      @include nbx-animate;
+      cursor: pointer;
+      position: absolute;
+      right: 8px;
+      top: 8px;
+      &:hover {
+        color: $black;
+      }
+    }
+  }
+  .icon-alert {
+    width: 64px;
+    height: 100%;
+    @include nbx-flex-common;
+    span.nuboxFont {
+      color: $white;
+      font: {
+        family: 'Nubox'!important;
+        size: 32px;
+      }
+    }
+  }
+  .message {
+    @include nbx-flex-alt;
+    width: 236px;
+    height: 100%;
+    padding: 16px;
+    background-color: $white;
+    border-radius: 0px 3px 3px 0px;
+    p {
+      display: block;
+      width: 100%;
+      margin-bottom: 16px;
+      @include nbx-roboto;
+      font: {
+        size: 13px;
+        weight: 400;
+      }
+      color: $black;
+      text: {
+        align: left;
+      }
+    }
+  }
+}
+
+
+:global {
+  .window-blur-enter {
+    opacity: 0.01;
+  }
+
+  .window-blur-enter.window-blur-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+  }
+
+  .window-blur-leave {
+    opacity: 1;
+  }
+
+  .window-blur-leave.window-blur-leave-active {
+    opacity: 0.01;
+    transition: opacity 300ms ease-in;
+  }
+  .window-blur-appear {
+    opacity: 0.01;
+  }
+
+  .window-blur-appear.window-blur-appear-active {
+    opacity: 1;
+    transition: opacity .5s ease-in;
+  }
+}

@@ -1,0 +1,1234 @@
+//IMPORT GENERAL MIXINS AND CLASSES
+@import "_mixins.scss";
+.header-li,
+.nivel-li {
+  @include nbx-roboto;
+  padding-left: 6px;
+  padding-right: 6px;
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-overflow-multiline: ellipsis;
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}
+
+//ESTILO PARA ELLIPSIS EN LOS LI
+.body-nbx-grid {
+  .cnt-body-nbx-grid {
+    .register {
+      .nivel-ul {
+        .nivel-li{
+          > span {
+            width: 100%;
+            @include nbx-text-overflow;
+          }
+        }
+      }
+    }
+  }
+}
+
+.header-nbx-grid {
+  display: block;
+  position: relative;
+  background-color: $gray-6;
+  height: 40px;
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+  border-color: $gray-2;
+  box-sizing: border-box;
+  .header-ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    align-items: center;
+    align-content: center;
+    @include nbx-webkit-reset;
+    &.sortable {
+      .header-li {
+        white-space: normal;
+        cursor: pointer;
+        &:before {
+          position: absolute;
+          right: 8px;
+          top: -4px;
+          line-height: 38px;
+          display: none;
+          @include nbx-nubox;
+          color: $gray-5;
+          content: "\e948";
+          font-size: 12px;
+          @include nbx-animate;
+          font-weight: 400;
+          font-weight: normal;
+        }
+        &:after {
+          position: absolute;
+          right: 8px;
+          top: 6px;
+          line-height: 38px;
+          display: none;
+          @include nbx-nubox;
+          color: $gray-5;
+          content: "\e90a";
+          font-size: 12px;
+          @include nbx-animate;
+          font-weight: 400;
+          font-weight: normal;
+        } //ORDEN ASCENDENTE
+        &.sortable-up {
+          &:before {
+            display: inline-block;
+            color: $gray-5;
+          }
+          &:after {
+            display: inline-block;
+            color: $gray-11;
+          }
+          &:focus {
+            &:before {
+              color: $color-3;
+              º: 0 0 0 3px $color-6, 0 0 0 5px $color-5;
+              transition: box-shadow 200ms ease;
+            }
+          }
+        } //ORDEN DESCENDENTE
+        &.sortable-down {
+          &:before {
+            display: inline-block;
+            color: $gray-11;
+          }
+          &:after {
+            display: inline-block;
+            color: $gray-5;
+          }
+          &:focus {
+            &:after {
+              color: $color-3;
+              box-shadow: 0 0 0 3px $color-6, 0 0 0 5px $color-5;
+              transition: box-shadow 200ms ease;
+            }
+          }
+        } //SE ESTÁ ORDENANDO POR OTRA FILA
+        &.sortable-other {
+          &:hover {
+            &:before {
+              display: inline-block;
+              color: $gray-11;
+            }
+          }
+          &:hover {
+            &:after {
+              display: inline-block;
+              color: $gray-11;
+            }
+          }
+        }
+        &.check,
+        .erase,
+        .radio,
+        .select {
+          @include nbx-flex-alt;
+          font-weight: 400;
+          font-weight: normal;
+          &:hover {
+            &:after,
+            &:before {
+              display: none;
+              visibility: hidden;
+            }
+          }
+          &:after,
+          &:before {
+            display: none;
+            visibility: hidden;
+          }
+        }
+      }
+    }
+    .header-li {
+      border-right: 1px solid $gray-2;
+      &:last-of-type {
+        border-right: 0;
+      }
+      font: {
+        size: 12px;
+        weight: 600;
+      }
+      text: {
+        align: center;
+        transform: uppercase;
+      }
+      color: $gray-5;
+      height: 100%;
+      &.check,
+      &.select,
+      &.radio {
+        width: 31px;
+        max-width: 31px;
+        min-width: 31px;
+        font-weight: 400;
+        @include nbx-flex-alt;
+        .nbx-checkbox {
+        width: 13px;
+        height: 13px;
+        input.input-check[type="checkbox"]:not(:checked)+label.label-check:before,
+        input.input-check[type="checkbox"]:checked+label.label-check:before {
+          font-size: 14px;
+          width: 13px;
+          height: 13px;
+          left: -8.5px;
+          top: 0px!important;
+          margin-left: inherit;
+          line-height: inherit;
+        }
+        input.input-check[type="checkbox"]:not(:checked)+label.label-check:after,
+        input.input-check[type="checkbox"]:checked+label.label-check:after {
+          font-size: 14px;
+          width: 13px;
+          height: 13px;
+          left: -8.5px;
+          top: 0px!important; 
+          margin-left: inherit;
+          line-height: inherit;
+        }
+        &.focus {
+          input.input-check[type="checkbox"]:not(:checked) + label.label-check:before,
+          input.input-check[type="checkbox"]:checked + label.label-check:before, input.input-check[type="checkbox"]:not(:checked) + label.label-check:before,
+          .nbx-checkbox.focus input.input-check[type="checkbox"]:checked + label.label-check:before {
+            width: 14px;
+            height: 14px;
+            border-radius: 1px;
+            box-shadow: 0 0 0 3px #d5edff, 0 0 0 5px #2196f3;
+            transition: box-shadow 200ms ease;
+          }
+        }
+        }
+      }
+      &.scroll-space {
+        width: 18px;
+        max-width: 18px;
+        min-width: 18px;
+        @include nbx-cero;
+      }
+      &.numeration {
+        width: 40px;
+        max-width: 40px;
+        min-width: 40px;
+        text-align: center;
+        font: {
+          weight: 500;
+          size: 12px;
+        }
+        color: $gray-5;
+        border-right: 0px;
+      }
+      &.no-border {
+        border-right: 0px;
+      }
+    }
+  }
+}
+
+// CUERPO DE LA GRILLA
+.body-nbx-grid {
+  width: 100%;
+  height: calc(100% - 30px);
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid $gray-2;
+  background-color: $white;
+  &.no-header{
+    .cnt-body-nbx-grid {
+      border-top: 1px solid #d8d8d8;
+      width: calc(100% - 2px) !important;
+      border-right: 1px solid $gray-2;
+      border-left: 1px solid $gray-2;
+      .register {
+        margin-left: -1px;
+        .nivel-ul {
+          .nivel-li {
+            p {
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+          }
+        }
+      }
+    }
+    
+  }
+
+  .cnt-body-nbx-grid {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    .register {
+      display: block;
+      width: 100%;
+      height: auto;
+      position: relative;
+      &:first-of-type {
+        margin-top: -1px;
+      }
+      .nivel-ul {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        align-items: center;
+        align-content: center;
+        box-sizing: border-box;
+        border-width: 1px 1px 0px 1px;
+        border-style: solid;
+        border-color: $gray-2;
+        height: auto;
+        @include nbx-webkit-reset;
+      } // PRIMER NIVEL
+      &.level-1 {
+        .nivel-ul {
+          background-color: $white;
+        }
+        &:nth-child(even) {
+          .nivel-ul {
+            background-color: $white-gridrow;
+          }
+        }
+        &.activo {
+          &:after {
+            font-family: 'Nubox'!important;
+            content: "\e901";
+            color: $gray-9;
+            position: absolute;
+            left: 22px;
+            top: 52px;
+            font-size: 16px;
+          }
+          >.nivel-ul {
+            background-color: $color-3;
+            border-bottom: 1px solid $gray-2;
+          }
+          .erase {
+            &:before {
+              color: $color-3!important;
+            }
+            &:hover {
+              &:before {
+                color: lighten($color-3, 10%)!important;
+              }
+            }
+          }
+        }
+        &.placeholder {
+          .nivel-ul {
+            background-color: $white;
+            border: 1px solid $gray-2;
+            .nivel-li {
+              font-style: italic;
+              color: $gray-15;
+              cursor: pointer;
+            }
+            .erase {
+              visibility: hidden;
+            }
+            .label {
+              visibility: hidden;
+            }
+          }
+        }
+      } // SEGUNDO NIVEL
+      &.level-2 {
+        height: 0px;
+        overflow: hidden;
+        @include nbx-animate;
+        &.level-no-num {
+          width: calc( 100% - 40px - 12px);
+          margin-left: 52px;
+        }
+        &.level-no-del {
+          width: calc( 100% - 40px - 12px);
+          margin-left: 52px;
+        }
+        &.level-no-num-del {
+          width: calc( 100% - 40px - 40px - 12px);
+          margin-left: 92px;
+        }
+        &:nth-child(even) {
+          >.nivel-ul {
+            background-color: lighten($color-6, 2.5%);
+          }
+        }
+        &:nth-child(odd) {
+          >.nivel-ul {
+            background-color: lighten($color-6, 2.5%);
+          }
+        }
+        &:first-of-type {
+          .nivel-ul {
+            border-top: 0;
+          }
+        }
+        &:last-of-type {
+          .nivel-ul {
+            border-bottom: 1px solid $gray-2;
+          }
+        }
+        &.placeholder {
+          .nivel-ul {
+            background-color: $white;
+            .nivel-li {
+              font-style: italic;
+              color: $gray-15;
+              cursor: pointer;
+            }
+            .erase {
+              visibility: hidden;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.nivel-li.icon {
+  > span, label:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.nivel-li {
+  height: 40px;
+  font-size: 13px;
+  &.clean {
+    text-transform: inherit;
+  }
+  &.icon {
+    > span, label {
+      margin-right: 6px;
+      width: auto!important;
+      &:only-child {
+        margin-right: 0px;
+      }
+      &:last-of-type {
+        margin-right: 0px;
+      }
+      > span.nuboxFont {
+        font-size: 24px;
+        &.nubox-estado-liquidado {
+          .path1 {
+            &:before {
+              color: $gray-4;
+            }
+          }
+          .path2 {
+            &:before {
+              color: $white;
+            }
+          }
+          .path3 {
+            &:before {
+              color: $color-9;
+            }
+          }
+        }
+        &.nubox-check {
+          &:before {
+            color: $color-8;
+          }
+        }
+        &.nubox-estado-actualizado {
+          .path1 {
+            &:before {
+              color: $color-5;
+            }
+          }
+          .path2 {
+            &:before {
+              color: $white;
+            }
+          }
+        }
+        &.nubox-estado-desactualizado {
+          //  &:before {
+          //   display: none;
+          // }
+          .path1 {
+            &:before {
+              // display: inline-block;
+              color: $color-9;
+            }
+          }
+          .path2 {
+            &:before {
+              // display: inline-block;
+              color: $white;
+            }
+          }
+        }
+        &.nubox-estado-borrador {
+          .path1 {
+            &:before {
+              color: $white;
+            }
+          } 
+          .path2 {
+            &:before {
+              color: $color-5;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.mix {
+    justify-content: center!important;
+    > span {
+      @include nbx-flex-common;
+      width: 100%;
+      .rut {
+        display: inline-block;
+        margin-right: 6px;
+        text-align: right;
+        width: 50%!important;
+        min-width: 50%!important;
+        max-width: 50%!important;
+      }
+      .nombre {
+        display: inline-block;
+        text-align: left;
+        width: 50%!important;
+        min-width: 50%!important;
+        max-width: 50%!important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-overflow-multiline: ellipsis;
+      }
+    }
+  }
+  &:last-of-type {
+    border-right: 0px;
+  }
+  &.normal {
+    color: $black;
+    font-style: normal;
+  }
+  &.placeholder {
+    color: $gray-15;
+    font-style: italic;
+  }
+  &.check,
+  &.select {
+    width: 31px;
+    max-width: 31px;
+    min-width: 31px;
+    font-weight: 400;
+    font-weight: normal;
+    .nbx-checkbox {
+    width: 18px;
+    height: 13px;
+    position: absolute;
+    float: inherit;
+    
+    input.input-check[type="checkbox"]:not(:checked)+label.label-check:before,
+    input.input-check[type="checkbox"]:checked+label.label-check:before {
+      font-size: 14px;
+      width: 13px;
+      height: 13px;
+      top: 0px;
+      left: 2px;
+    }
+    input.input-check[type="checkbox"]:not(:checked)+label.label-check:after,
+    input.input-check[type="checkbox"]:checked+label.label-check:after {
+      font-size: 14px;
+      width: 13px;
+      height: 13px;
+      left: 2px;
+      margin-left: 0px!important;
+      margin-top: 0px!important;
+      line-height: auto!important;
+      top: 0px;
+    }
+    .wrapper-checkbox {
+      .label-check {
+        position: absolute!important;
+        left: 0px;
+        top: 0px;
+      }
+    }
+    }
+  }
+  &.numeration {
+    width: 40px;
+    max-width: 40px;
+    min-width: 40px;
+    text-align: center;
+    font: {
+      weight: 500;
+      size: 12px;
+    }
+    color: $gray-5;
+    border-right: 0px;
+  }
+  &.label,
+  &.label-noexpand {
+    width: 64px;
+    max-width: 64px;
+    min-width: 64px;
+    text-align: center;
+    border-right: 0px;
+    position: relative; //LABEL GENERAL
+    &:after {
+      font: {
+        family: 'Nubox';
+        size: 16px;
+      }
+      color: $white;
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      text: {
+        align: right;
+      }
+      margin: 0 auto;
+      height: 20px;
+      padding-top: 2px;
+      @include nbx-border-lg;
+      cursor: pointer;
+      width: 48px;
+      padding-right: 3px;
+      @include nbx-animate;
+    }
+    &.collapsed {
+      &:after {
+        content: "\e90a";
+      }
+    }
+    &.expanded {
+      &:after {
+        content: "\e948";
+      }
+    }
+    &:before {
+      text: {
+        align: center;
+        transform: uppercase;
+      }
+      font: {
+        size: 12px;
+        weight: 600;
+      }
+      color: white;
+      position: absolute;
+      left: 18px;
+      width: 12px;
+      top: 12px;
+      z-index: 2;
+      @include nbx-roboto;
+      cursor: pointer;
+    } //LABEL AUXILIAR
+    &.aux {
+      &:hover {
+        &:after {
+          background-color: lighten($color-2, 10%);
+        }
+      }
+      &:after {
+        background-color: $color-2;
+        border: 1px solid $color-2;
+      }
+      &:before {
+        content: "aux";
+      }
+    } //LABEL HONORARIOS
+    &.hon {
+      &:hover {
+        &:after {
+          background-color: lighten($color-9, 10%);
+        }
+      }
+      &:after {
+        background-color: $color-9;
+        border: 1px solid $color-9;
+      }
+      &:before {
+        content: "hon";
+      }
+    } //LABEL BANCARIOS
+    &.ban {
+      &:hover {
+        &:after {
+          background-color: lighten($color-8, 10%);
+        }
+      }
+      &:after {
+        background-color: $color-8;
+        border: 1px solid $color-8;
+      }
+      &:before {
+        content: "ban";
+      }
+    }
+    &.empty {
+      &.before {
+        cursor: default;
+        color: transparent;
+      }
+      &:hover {
+        &:after {
+          background-color: transparent;
+          cursor: default;
+          color: transparent;
+        }
+      }
+      &:after {
+        background-color: transparent;
+        border: 1px solid transparent;
+        cursor: default;
+        color: transparent;
+      }
+      &.collapsed {
+        &:after {
+          content: "";
+        }
+      }
+      &.expanded {
+        &:after {
+          content: "";
+        }
+      }
+    }
+    &.default {
+      &:hover {
+        &:after {
+          background-color: lighten($color-3, 10%);
+        }
+      }
+      &:after {
+        background-color: $color-3;
+        border: 1px solid $color-3;
+        text-align: center;
+        width: 24px;
+        padding-left: 3px;
+        margin-left: 26px;
+      }
+      &:before {
+        content: "";
+      }
+    }
+  }
+  &.label-noexpand {
+    &:after {
+      content: "";
+    }
+    &:before {
+      width: 53px;
+      left: inherit;
+      right: 11px;
+      text-align: center;
+    }
+    &.collapsed {
+      &:after {
+        content: "";
+      }
+    }
+    &.expanded {
+      &:after {
+        content: "";
+      }
+    }
+  }
+  &.erase {
+    width: 40px;
+    max-width: 40px;
+    min-width: 40px;
+    border-right: 0px;
+    &:hover {
+      &:before {
+        color: $color-3;
+      }
+    }
+    &:before {
+      font: {
+        family: 'Nubox'!important;
+        size: 18px;
+      }
+      content: "\e92a";
+      color: $gray-11;
+      cursor: pointer;
+      display: block;
+      position: relative;
+      text-align: center;
+      margin: 0 auto;
+      @include nbx-animate;
+    }
+  }
+  &.center {
+    justify-content: center;
+    text-align: center;
+  }
+  &.right {
+    justify-content: flex-end;
+    text-align: right;
+  }
+  &.left {
+    justify-content: flex-start;
+    text-align: left;
+  }
+}
+
+// GRID STYLES
+.cnt-nbx-grid {
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  border-bottom: 1px solid $gray-2;
+  &.default {
+    max-height: calc(100vh - 257px);
+    min-height: calc(100vh - 257px);
+    height: calc(100vh - 257px);
+  }
+  &.actionbar-top {
+    max-height: calc(100vh - 307px);
+    min-height: calc(100vh - 307px);
+    height: calc(100vh - 307px);
+  }
+  &.actionbar-bottom {
+    max-height: calc(100vh - 309px);
+    min-height: calc(100vh - 309px);
+    height: calc(100vh - 309px);
+  }
+  &.actionbar-top-bottom {
+    max-height: calc(100vh - 361px);
+    min-height: calc(100vh - 361px);
+    height: calc(100vh - 361px);
+  }
+  &.pagination {
+    max-height: calc(100vh - 286px);
+    min-height: calc(100vh - 286px);
+    height: calc(100vh - 286px);
+  }
+  &.actionbar-top-pagination {
+    max-height: calc(100vh - 337px);
+    min-height: calc(100vh - 337px);
+    height: calc(100vh - 337px);
+  }
+  &.actionbar-bottom-pagination {
+    max-height: calc(100vh - 340px);
+    min-height: calc(100vh - 340px);
+    height: calc(100vh - 340px);
+  }
+  &.actionbar-top-bottom-pagination {
+    max-height: calc(100vh - 390px)!important;
+    min-height: calc(100vh - 390px)!important;
+    height: calc(100vh - 390px)!important;
+  }
+  &.masive {
+    .header-nbx-grid {
+      .header-ul {
+        .check,
+        .select,
+        .radio {
+          .nbx-checkbox,
+          .nbx-radio {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+  &.grid-tabs {
+    &.actionbar-top {
+      max-height: calc(100vh - 343px);
+      min-height: calc(100vh - 343px);
+      height: calc(100vh - 343px);
+    }
+    &.actionbar-bottom {
+      max-height: calc(100vh - 346px);
+      min-height: calc(100vh - 346px);
+      height: calc(100vh - 346px);
+    }
+    &.actionbar-top-bottom {
+      max-height: calc(100vh - 397px);
+      min-height: calc(100vh - 397px);
+      height: calc(100vh - 397px);
+    }
+    &.pagination {
+      max-height: calc(100vh - 324px);
+      min-height: calc(100vh - 324px);
+      height: calc(100vh - 324px);
+    }
+    &.actionbar-top-pagination {
+      max-height: calc(100vh - 373px);
+      min-height: calc(100vh - 373px);
+      height: calc(100vh - 373px);
+    }
+    &.actionbar-bottom-pagination {
+      max-height: calc(100vh - 376px);
+      min-height: calc(100vh - 376px);
+      height: calc(100vh - 376px);
+    }
+    &.actionbar-top-bottom-pagination {
+      max-height: calc(100vh - 426px)!important;
+      min-height: calc(100vh - 426px)!important;
+      height: calc(100vh - 426px)!important;
+    }
+  }
+  &.grid-line {
+    &.scroll {
+      .header-nbx-grid {
+        padding-right: 17px;
+        .header-ul {
+          .header-li {
+            &:last-of-type {
+              >span {
+                padding-left: 15px;
+              }
+            }
+          }
+        }
+      }
+      .body-nbx-grid {
+        .cnt-body-nbx-grid{
+          .register.level-1 {
+            .nivel-ul { 
+              border-right: 0px;
+            }
+          }
+        }
+      }
+    }
+
+    .body-nbx-grid {
+      .cnt-body-nbx-grid {
+        max-height: 100% !important;
+        width: calc(100% - 1px);
+        border-right: 1px solid $gray-2;
+        .register.level-1 {
+          /*ESTILOS TEMPORALES A ESPERA DE AYUDA DE NINA EN GRILLA start*/
+          &[aria-pressed="true"],
+          &:focus {
+            .nivel-ul {
+              background-color: $color-6;
+              border-top: 0!important;
+              box-shadow: 0px 0px 0px 1px $gray-8;
+              border-bottom: 1px solid $gray-8;
+              .nivel-li {
+                border-right: 1px solid $gray-8;
+                &:last-of-type {
+                  border-right: 0;
+                }
+              }
+              .nivel-li {
+                .nbx-checkbox {
+                  &.focus {
+                    //border: 12px solid rgba($color-5, 0.25);
+                  }
+                }
+              }
+            }
+            &:last-of-type {
+              .nivel-ul {
+                border-bottom: 0px!important;
+              }
+            }
+          }
+          .nivel-li {
+            border-right: 1px solid $gray-2;
+            &.no-border,
+            &:last-of-type {
+              border-right: 0px;
+            }
+            &.numeration {
+              border-right: 0px;
+            }
+          }
+        }
+        .register.level-1[aria-pressed="true"] + .register.level-1[aria-pressed="false"]{
+          .nivel-ul {
+            border-top: 0px;
+          }
+        }
+        .register.level-1[aria-pressed="false"] + .register.level-1[aria-pressed="true"]{
+          margin-top: 1px;
+        }
+        .register.level-1{
+          &:first-of-type{
+            margin-top: 0px;
+            .nivel-ul {
+              border-top: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// ACTION BAR TOP
+.nbx-grid-actionbar-top {
+  height: 48px;
+  border-top: 1px solid $gray-2;
+  border-left: 1px solid $gray-2;
+  border-right: 1px solid $gray-2;
+  background-color: $white;
+  @include nbx-flex-common;
+  justify-content: space-between;
+  padding: 8px;
+  p.state-grid {
+    @include nbx-roboto;
+    font: {
+      size: 13px;
+      weight: 400;
+    }
+    text: {
+      align: left;
+    }
+    color: $black;
+  }
+  nav.action-bar {
+    @include nbx-flex-common;
+    justify-content: flex-end;
+  }
+  nav.action-bar {
+    > div {
+    margin-left: 10px;
+    }
+    button.nbx-button {
+    //@include nbx-box-shadow;
+    margin-left: 10px;
+    }
+  }
+}
+
+// ACTION BAR TOP EN CONTEXTO CON NBX-SCROLLBAR
+
+.nbx-grid-actionbar-top {
+  .action-bar {
+    .nbx-split-button {
+      .wrapper-splitbutton { 
+        z-index: 11;
+      }
+    }
+  }
+}
+
+//ACTION BAR BOTTOM
+.nbx-grid-actionbar-bottom {
+  @include nbx-flex-common;
+  justify-content: flex-start;
+  width: 100%;
+  padding-top: 24px;
+  padding-left: 0px;
+  padding-right: 16px;
+  margin-top: 10px;
+  button {
+    margin-right: 10px;
+    &:last-of-type {
+      margin-right: 0px;
+    }
+  }
+}
+
+// PAGINATION
+.nbx-grid-pagination {
+  @include nbx-flex-common;
+  justify-content: flex-end;
+  position: relative;
+  background-color: $gray-6;
+  height: 40px;
+  border-width: 0px 1px 1px 1px;
+  border-style: solid;
+  border-color: $gray-2;
+  box-sizing: border-box;
+  padding: 0px 16px 0px 16px;
+  margin-top: 8px;
+  span.txt-pagination {
+    color: $black;
+    @include nbx-roboto;
+    font: {
+      size: 12px;
+      weight: 400;
+    }
+    text: {
+      align: right;
+    }
+    margin-right: 3px;
+  }
+  span.counter-pagination {
+    color: $black;
+    @include nbx-roboto;
+    font: {
+      size: 12px;
+      weight: 400;
+    }
+    text: {
+      align: right;
+    }
+    margin-right: 3px;
+    &.current {
+      margin-left: 20px;
+    }
+    &.total {
+      margin-right: 20px;
+    }
+  }
+  .nbx-combobox {
+    margin-left: 3px;
+  }
+  button.button-pagination {
+    border: 1px solid $color-3;
+    background-color: $color-3;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    color: $white;
+    margin-right: 6px;
+    font-size: 14px;
+    outline: none;
+    @include nbx-border-sm;
+    @include nbx-animate;
+    @include nbx-flex-common;
+    >span {
+      margin-top: 1px;
+    }
+    &:hover,
+    &:focus,
+    &:active {
+      outline: none;
+    }
+    &.disabled {
+      background: $gray-17;
+      background-color: $gray-17;
+      border: 1px solid $gray-16;
+      color: $gray-15;
+      &:hover {
+        background: darken($gray-17, 10%);
+        background-color: darken($gray-17, 10%);
+        color: $gray-15;
+      }
+    }
+    &:hover {
+      background-color: lighten($color-3, 10%);
+    }
+    &:last-of-type {
+      margin-right: 0px;
+    }
+  }
+}
+
+//EDGE
+html[data-useragent*="Edge"] {
+  .cnt-nbx-grid.grid-line .body-nbx-grid .cnt-body-nbx-grid [aria-pressed="false"].register.level-1 + [aria-pressed="true"].register.level-1 {
+    margin-top: 0;
+  }
+
+  .cnt-nbx-grid.grid-line .body-nbx-grid .cnt-body-nbx-grid .register.level-1[aria-pressed="true"] .nivel-ul {
+    border-top: 1px solid $gray-8 !important;
+  }
+
+  .cnt-nbx-grid.grid-line .body-nbx-grid .cnt-body-nbx-grid .register.level-1[aria-pressed="true"]:first-child .nivel-ul {
+    height: 39px;
+  }
+
+  .cnt-nbx-grid.grid-line .body-nbx-grid .cnt-body-nbx-grid .register.level-1[aria-pressed="true"] + .register.level-1[aria-pressed="true"] .nivel-ul {
+    border-top: none !important;
+  }
+  
+  //FIXES PARA PROBLEMA DE ALINEACIÓN HORIZONTAL EN LAS GRILLAS
+  .header-nbx-grid {
+    .header-ul {
+      box-sizing: content-box;
+    }
+  }
+  .body-nbx-grid {
+    .cnt-body-nbx-grid {
+      .register {
+        overflow-x: hidden!important;
+        .nivel-ul {
+          box-sizing: content-box;
+        }
+      }
+    }
+    .cnt-body-nbx-grid:not(.scroll-scrolly_visible) {
+      .register {
+        .nivel-ul {
+          width: calc(100% - 1px);
+        }
+      }
+    }
+    .cnt-body-nbx-grid.scroll-scrolly_visible {
+      .register {
+        .nivel-ul {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+//IE
+html[data-useragent*="Trident"] {
+  //FIXES PARA PROBLEMA DE ALINEACIÓN HORIZONTAL EN LAS GRILLAS
+  .header-nbx-grid {
+    .header-ul {
+      box-sizing: content-box;
+    }
+  }
+  .body-nbx-grid {
+    .cnt-body-nbx-grid {
+      .register {
+        overflow-x: hidden!important;
+        .nivel-ul {
+          box-sizing: content-box;
+        }
+      }
+    }
+    .cnt-body-nbx-grid:not(.scroll-scrolly_visible) {
+      .register {
+        .nivel-ul {
+          width: calc(100% - 1px);
+        }
+      }
+    }
+    .cnt-body-nbx-grid.scroll-scrolly_visible {
+      .register {
+        .nivel-ul {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+// SEPARACION ENTRE ICONOS DE ESTADO
+
+//span[class^="nubox-estado-"] {
+    //margin: 0 8px;
+//}
+
+
+// FIX CORTE DE ICONOS EN GRILLA
+.body-nbx-grid .cnt-body-nbx-grid .register .nivel-ul .nivel-li.icon > span {
+  overflow: unset;
+}

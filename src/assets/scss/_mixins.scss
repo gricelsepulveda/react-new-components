@@ -1,0 +1,161 @@
+// GENERAL BREAKPOINTS
+$small: "(max-width: 1280px)";
+$normal: "(min-width: 1366px)";
+$large: "(min-width: 1680px)";
+$extra-large: "(min-width: 1920px)";
+$retina: "(min-width: 2048px)";
+
+// COLORS
+$color-1: #1f2a44; // BLUE NUBOX
+$color-2: #ff8d1d; // ORANGE NUBOX
+$color-3: #336699; // SOFT BLUE
+$color-4: #005ab9; // BLUE
+$color-5: #2196f3; // SKYBLUE
+$color-6: #d5edff; // SKYBLUE SOFT
+$color-7: #e2eff7; // SKYBLUE WHITE
+$color-8: #4caf50; // GREEN
+$color-9: #ffbc00; // YELLOW
+$color-10: #ea520d; // RED
+$color-11: #673ab7; // PURPLE
+$color-12: #9c27b0; // VIOLET
+$color-13: #009688; // TURQUOISE
+$color-14: #ebebeb; // SUBT-FORM BG-COLOR - LIGHTBLUE
+$color-15: #d4eafc; // BG COLOR FOCUS
+$color-16: #50bcf9; // ITERACION DE FOCOS
+
+// GRAYSCALE
+$white: #ffffff;
+$white-gridrow: #f9f9f9;
+$gray-1: #e0e0e0;
+$gray-2: #d8d8d8;
+$gray-3: #989898;
+$gray-4: #757575;
+$gray-5: #656565;
+$gray-6: #ebebeb;
+$gray-8: #b2b2b2;
+$gray-9: #828282;
+$gray-10: #efefef;
+$gray-11: #bababa;
+$gray-12: #f5f5f5;
+$gray-13: #505050;
+$gray-14: #898989;
+$gray-15: #919191; // FONT COLOR BUTTON DISABLED
+$gray-16: #d9d9d9; // BORDER COLOR BUTTON DISABLED & BORDER COLOR INPUT
+$gray-17: #f7f7f7; // BACKGROUND BUTTON DISABLED 
+$gray-18: #f2f2f2; // BACKGROUND MENU
+$gray-19: #c7c7c7; 
+$gray-20: #c1c1c1; // BORDE MULTI BUTTON WRAPPER
+$gray-21: #282828;
+$black: #656565; // DEFAULT FONT COLOR
+$soft-black: #494949;
+$hover-gray: #a9a9a9; // :HOVER INPUT 
+$btn-hover-gray: #ebebeb; // :HOVER DISABLED BUTTON 
+
+// AUX MIXINGS
+
+@mixin nbx-clean-ahref {
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+  &:hover, &:active, &:visited, &:focus {
+    text-decoration: none;
+    color: inherit;
+    outline: none;
+  }
+}
+
+@mixin nbx-zero {
+  padding: 0;
+  margin: 0;
+}
+
+@mixin nbx-cero {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+// AUX MIXINGS
+@mixin nbx-flex-common {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+@mixin nbx-flex-alt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+@mixin nbx-border-lg {
+  border-radius: 4px;
+}
+
+@mixin nbx-border-md {
+  border-radius: 3px;
+}
+
+@mixin nbx-border-sm {
+  border-radius: 2px;
+}
+
+@mixin nbx-animate {
+  transition: all 0.25s ease-in-out;
+}
+
+@mixin nbx-roboto {
+  font-family: "Roboto", Helvetica, Tahoma, Arial, clean, sans-serif;
+}
+
+@mixin nbx-nubox {
+  font-family: 'Nubox'!important;
+}
+
+@mixin nbx-box-shadow {
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+@mixin nbx-box-shadow-popover {
+  box-shadow: rgba(73, 73, 73, 0.25) 0px 1px 5px;
+}
+
+@mixin nbx-text-overflow {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@mixin nbx-webkit-reset {
+  -webkit-margin-before: 0!important;
+  -webkit-margin-after: 0!important;
+  -webkit-margin-start: 0!important;
+  -webkit-margin-end: 0!important;
+  -webkit-padding-before: 0!important;
+  -webkit-padding-after: 0!important;
+  -webkit-padding-start: 0!important;
+  -webkit-padding-end: 0!important;
+}
+
+@mixin nbx-clean-list {
+  list-style: none;
+  list-style-image: none;
+  list-indent: 0;
+  list-style-type: none;
+  list-style-position: outside;
+}
+
+@mixin nbx-zindex-max{
+  z-index: 99999999999999999999;
+}

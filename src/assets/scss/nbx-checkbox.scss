@@ -1,0 +1,228 @@
+//IMPORT GENERAL MIXINS AND CLASSES
+@import "_mixins.scss";
+.nbx-checkbox {
+  outline: none;
+  outline: 0;
+  float: left;
+  background-color: transparent;
+  .wrapper-checkbox {
+    width: 16px;
+    height: 16px;
+  }
+    input.input-check[type="checkbox"]:not(:checked),
+    input.input-check[type="checkbox"]:checked {
+    position: absolute;
+    display: none;
+    @include nbx-animate;
+    outline: none;
+    outline: 0;
+
+    //AVOID FOCUS BROWSER STYLES
+    &:focus, &:active{
+      outline: 0;
+      box-shadow: 0;
+      border: 0;
+    }
+  }
+  input.input-check[type="checkbox"]:not(:checked)+label.label-check,
+  input.input-check[type="checkbox"]:checked+label.label-check {
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    outline: 0;
+    //AVOID FOCUS BROWSER STYLES
+    &:focus, &:active{
+      outline: 0;
+      box-shadow: 0;
+      border: 0;
+    }
+  } //CHECKBOX DESIGN
+  input.input-check[type="checkbox"]:not(:checked)+label.label-check:before,
+  input.input-check[type="checkbox"]:checked+label.label-check:before {
+    font-family: 'Nubox'!important;
+    content: '\e926';
+    font-size: 16px;
+    position: absolute;
+    left: -1px;
+    top: 8px; /* ESTILO PARA QUE SE VEA BIEN EN FORM */
+    width: 15px;
+    height: 15px;
+    color: $gray-15;
+    outline: none;
+    outline: 0;
+    background: #fff;
+    border-radius: 4px;
+    //AVOID FOCUS BROWSER STYLES
+    &:focus, &:active{
+      outline: 0;
+      box-shadow: 0;
+      border: 0;
+    }
+  }
+  input.input-check[type="checkbox"]:not(:checked)+label.label-check:after,
+  input.input-check[type="checkbox"]:checked+label.label-check:after {
+    content: "";
+    outline: none;
+    outline: 0;
+    //AVOID FOCUS BROWSER STYLES
+    &:focus, &:active{
+      outline: 0;
+      box-shadow: 0;
+      border: 0;
+    }
+  } //CHECKBOX SELECTED DESIGN
+  input.input-check[type="checkbox"]:not(:checked)+label.label-check:after,
+  input.input-check[type="checkbox"]:checked+label.label-check:after {
+    font-family: 'Nubox'!important;
+    content: '\e925';
+    position: absolute;
+    top: 11px; /* ESTILO PARA QUE SE VEA BIEN EN FORM */
+    left: -1px;
+    font-size: 16px;
+    width: 15px;
+    height: 15px;
+    color: $color-3;
+    outline: none;
+    outline: 0;
+    border-radius: 4px;
+    height: 100%;
+    width: 100%;
+    //AVOID FOCUS BROWSER STYLES
+    &:focus, &:active{
+      outline: 0;
+      box-shadow: 0;
+      border: 0;
+    }
+  } // CHECKED MARK ASPECT CHANGE
+  input.input-check[type="checkbox"]:not(:checked)+label.label-check:after {
+    opacity: 0;
+    transform: scale(0);
+    outline: none;
+    outline: 0;
+    //AVOID FOCUS BROWSER STYLES
+    &:focus, &:active{
+      outline: 0;
+      box-shadow: 0;
+      border: 0;
+    }
+  }
+  input.input-check[type="checkbox"]:checked+label.label-check:after {
+    opacity: 1;
+    transform: scale(1);
+    outline: none;
+    outline: 0;
+    //AVOID FOCUS BROWSER STYLES
+    &:focus, &:active{
+      outline: 0;
+      box-shadow: 0;
+      border: 0;
+    }
+  } // DISABLED CHECK
+  input.input-check[type="checkbox"]:disabled:not(:checked)+label.label-check:before,
+  input.input-check[type="checkbox"]:disabled:checked+label.label-check:before {
+    color: $gray-15;
+    outline: none;
+    outline: 0;
+    cursor: default;
+    //AVOID FOCUS BROWSER STYLES
+    &:focus, &:active{
+      outline: 0;
+      box-shadow: 0;
+      border: 0;
+    }
+  }
+  input.input-check[type="checkbox"]:disabled:checked+label.label-check:after {
+    color: $gray-15;
+    outline: none;
+    outline: 0;
+    cursor: default;
+    //AVOID FOCUS BROWSER STYLES
+    &:focus, &:active{
+      outline: 0;
+      box-shadow: 0;
+      border: 0;
+    }
+  }
+  input.input-check[type="checkbox"]:disabled+label.label-check {
+    color: $gray-15;
+    outline: none;
+    outline: 0;
+    cursor: default;
+    //AVOID FOCUS BROWSER STYLES
+    &:focus, &:active{
+      outline: 0;
+      box-shadow: 0;
+      border: 0;
+    }
+  } // ACCESIBILITY
+  input.input-check[type="checkbox"]:checked:focus+label.label-check:before,
+  input.input-check[type="checkbox"]:not(:checked):focus+label.label-check:before {
+    outline: none;
+    outline: 0;
+    //AVOID FOCUS BROWSER STYLES
+    &:focus, &:active{
+      outline: 0;
+      box-shadow: 0;
+      border: 0;
+    }
+  }
+}
+
+
+// FOCUS
+
+.nbx-element-container {
+  .nbx-checkbox.focus input.input-check[type="checkbox"] {
+    &:not(:checked) + label.label-check:before, &:checked + label.label-check:before {
+      width: 14px;
+      height: 14px;
+      border-radius: 1px;
+      box-shadow: 0 0 0 3px $color-6, 0 0 0 5px $color-5;
+      transition: box-shadow 200ms ease;
+      position: relative;
+    }
+  }
+}
+
+.nbx-element-container {
+  .nbx-checkbox.focus input.input-check[type="checkbox"] {
+    &:checked + label.label-check:after {
+      top: 0;
+    }
+  }
+}
+
+.nivel-li {
+  &.check .nbx-checkbox.focus input.input-check[type="checkbox"] {
+    &:not(:checked) + label.label-check:before, &:checked + label.label-check:before {
+      width: 14px;
+      height: 14px;
+      border-radius: 1px;
+      box-shadow: 0 0 0 3px $color-6, 0 0 0 5px $color-5;
+      transition: box-shadow 200ms ease;
+    }
+  }
+  &.select .nbx-checkbox.focus input.input-check[type="checkbox"] {
+    &:not(:checked) + label.label-check:before, &:checked + label.label-check:before {
+      width: 14px;
+      height: 14px;
+      border-radius: 1px;
+      box-shadow: 0 0 0 3px  $color-6, 0 0 0 5px $color-5;
+      transition: box-shadow 200ms ease;
+    }
+  }
+}
+
+.nbx-modal {
+  .nbx-element-container {
+    &.direction-x {
+      &.check {
+        .nbx-checkbox.focus {
+          margin-top: 1px;
+          margin-right: 1px;
+          margin-left: -1px;
+        }
+      }
+    }
+  }
+}

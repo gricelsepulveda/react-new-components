@@ -1,0 +1,20 @@
+input.validation-failed{
+  background-image: url("./assets/images/validation.svg");
+  background-size: 16px 16px;
+  background-position: 96% center;
+  background-repeat: no-repeat;
+  padding-right: 28px;
+  max-width: calc(100% - 28px);
+  &.normal {
+    border: 1px solid red;
+    &:focus {
+        border: 1px solid red;
+    }
+  }
+  &.base-line {
+    border-bottom: 1px solid red;
+    &:focus {
+        border-bottom: 1px solid red;
+    }
+  } 
+}
