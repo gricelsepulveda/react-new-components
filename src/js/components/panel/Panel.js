@@ -13,7 +13,7 @@ class Panel extends React.Component {
 
           <h1 className="nbx-h1">Portal de pagos<br/>¡Bienvenido!</h1>
 
-          <Avatar size="md" color="color-5" firstname="gricel" lastname="sepulveda"/>
+          <Avatar size="md" color="color-2" firstname="ricardo" lastname="ordaz"/>
 
           <p className="nbx-p">Ingresa tus datos para pagar</p>
           

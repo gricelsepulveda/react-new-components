@@ -1,32 +1,25 @@
 import React,{Fragment} from 'react' 
 
-
-
 class Avatar extends React.Component {
+
   render() {
 
-    let {size, color, firstname, lastname} = this.props
-    let nameLetter = ''
-    let lastnameLetter = ''
-    let noUser
-
-    //GET THE FIRST LETTER FROM FIRSTNAME AND LASTNAME
-    if (firstname && lastname) {
-      nameLetter = firstname.split("")[0]
-      lastnameLetter = lastname.split("")[0]
-    }
-    else {
-      noUser = "placeholder"
-    }
+    let { size, color, firstname, lastname } = this.props
 
     return (
       <Fragment>
-        <div className={`nbx-avatar ${size} ${color} ${noUser}`} >
-          <span className="nbx-initials">{`${nameLetter}${lastnameLetter}`}</span>
+        <div className={`nbx-avatar ${size} ${color}`} >
+          { (firstname, lastname)
+            ? 
+            ( <span className="nbx-initials">{ firstname.split("")[0] + lastname.split("")[0] }</span>)
+            : 
+            (<span className="nbx-placeholder"></span>)}
         </div>
       </Fragment>
     )
   }
-} 
+}
+
+
 
 export default Avatar
