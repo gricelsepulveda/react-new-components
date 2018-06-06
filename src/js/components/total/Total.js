@@ -4,26 +4,27 @@ class Total extends React.Component {
 
   render() {
 
-    let { width, valueFull } = this.props
+    let { width, valueFull} = this.props
+    let price 
 
     if ( isNaN(valueFull) ) {
-      console.log('no es un número')
+      console.warn("¡We're expecting a number! Keep Trying")
     }
     else {
-      console.log('es un número');
+      //OK
       if ( valueFull < 5000000){
-        console.log('es menor a 5.000.000');
+        price = valueFull.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")
       }
       else {
-        console.log('es mayor a 5.000.000')
+        console.warn("Business Rule: Khipu doesn't accept ammounts over 5 million")
       }
     }
 
     return (
       <Fragment>
         <div className="nbx-total">
-          <div className="nbx-total-cell">
-            ${valueFull}
+          <div className={`nbx-total-cell ${width}`}>
+            $ {price}
           </div>
         </div>
       </Fragment>
