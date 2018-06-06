@@ -10,7 +10,7 @@ class Test extends React.Component {
         {/*<div className="ejemplo">
           <Total valueFull="242091"/>
         </div>*/}
-        <Navbar system="Botón de Pago Nubox" loguser="Gricel Sepúlveda"/>
+        <Navbar system="Botón de Pago Nubox" user="Gricel Sepúlveda" />
       </Fragment>
     )
   }
