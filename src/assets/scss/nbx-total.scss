@@ -7,14 +7,37 @@
   padding: 18px;
   width: 100%;
   box-sizing: border-box;
+  @include nbx-flex-common;
+  justify-content: flex-end;
+  font: {
+    family: 'Roboto', sans-serif;
+    size: 16px;
+    weight: 600;
+  }
+  color: $black;
+  span {
+    text-transform: uppercase;
+    margin-right: 34px;
+  }
   .nbx-total-cell {
-    font: {
-      family: 'Roboto', sans-serif;
-      size: 16px;
-      weight: 600;
-    }
-    color: $black;
+    display: inline-block;
     text-align: right;
     padding: 0px 8px 0px 8px;
+    &.validation-fail {
+      position: relative;
+      color: $color-10;
+      &:after{
+        font: { 
+          family: 'Nubox'!important;
+          size: 18px;
+        }
+        content: '\e922';
+        position: absolute;
+        color: $color-10;
+        cursor: pointer;
+        top: 2px;
+        left: -18px;
+      }
+    }
   }
 }

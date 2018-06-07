@@ -1,30 +1,38 @@
 import React,{Fragment} from 'react' 
+import { timingSafeEqual } from 'crypto';
 
 class Total extends React.Component {
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      price : 0
+    } 
+  }
+
   render() {
 
-    let { width, valueFull} = this.props
-    let price 
-
-    if ( isNaN(valueFull) ) {
-      console.warn("¡We're expecting a number! Keep Trying")
+    let { width, valueFull, price} = this.props
+    let error
+    
+    if (width === undefined) {
+      console.warn('Please set width (width-200p or width-200 for percentages)')
+      width = ''
     }
-    else {
-      //OK
-      if ( valueFull < 5000000){
-        price = valueFull.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")
-      }
-      else {
-        console.warn("Business Rule: Khipu doesn't accept ammounts over 5 million")
-      }
+
+    price = parseInt(price)
+
+    if ( price > 5000000){
+      console.warn("BUSINESS RULE: Khipu doesn't accept ammounts over 5 million")
+      error = 'validation-fail'
     }
 
     return (
       <Fragment>
         <div className="nbx-total">
-          <div className={`nbx-total-cell ${width}`}>
-            $ {price}
+          <span>$ Total:</span> 
+          <div className={`nbx-total-cell ${(error) ? error : '' } ${width}`}>
+            { (price) ? price.toLocaleString('es-Es') : this.state.price.toLocaleString('es-Es') }
           </div>
         </div>
       </Fragment>
@@ -33,5 +41,4 @@ class Total extends React.Component {
 }
 
 export default Total
-
 
