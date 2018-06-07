@@ -2,13 +2,20 @@ import React, {Fragment} from 'react'
 
 class Navbar extends React.Component {
 
-  state = {
-    active: false
+  constructor(props) {
+    super(props);
+    this.state = {active: false, openMenu: false};
   }
 
   showUserOptions = () => {
     let { active } = this.state
     this.setState({ active: !active })
+  }
+
+
+  toggleMenu = () => {
+    let { openMenu } = this.state
+    this.setState({ openMenu: !openMenu })
   }
 
   render() {
@@ -18,10 +25,9 @@ class Navbar extends React.Component {
     let other
     let alternative
     let altMenu
-    console.log(this.state)
+
     //HERE YOUR LOGOUT METHOD
     const logoutMethod = (e) => {
-      console.log(e)
     }
 
     switch(type) { 
@@ -36,9 +42,8 @@ class Navbar extends React.Component {
         altMenu = (
           <Fragment>
             <span className="nuboxFont nubox-logo"></span>
-              <button className="nbx-sesion" onClick={logoutMethod}>
-              <span className="nuboxFont nubox-cerrar-sesion"></span>
-              salir
+            <button className="nbx-sesion" onClick={logoutMethod}>
+              <span className="nuboxFont nubox-cerrar-sesion"></span>salir
             </button>
           </Fragment>
         )
@@ -49,10 +54,14 @@ class Navbar extends React.Component {
       default: {
         altMenu = (
           <Fragment>
-            <span className="nuboxFont nubox-logo"></span>
-            <button className="nbx-sesion default" onClick={this.showUserOptions}>
-              {user}
-              <span className={(this.state.active !== false) ? `nuboxFont nubox-dropdown active` : `nuboxFont nubox-colapsar`}></span>
+            <div className="flex-row flex-start">
+              <button className={(this.state.openMenu !== false) ? `nbx-trigger-menu active` : `nbx-trigger-menu`} onClick={this.toggleMenu}>
+                <span className="nuboxFont nubox-menu"></span>
+              </button>
+              <span className="nuboxFont nubox-logo"></span>
+            </div>
+            <button className="nbx-sesion" onClick={this.showUserOptions}>
+              {user} <span className={(this.state.active !== false) ? `nuboxFont nubox-dropdown active` : `nuboxFont nubox-colapsar`}></span>
             </button>
           </Fragment>
         ) 

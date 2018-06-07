@@ -1,0 +1,65 @@
+//IMPORT GENERAL MIXINS AND CLASSES
+@import "_mixins.scss";
+
+.nbx-breadcrumb {
+  height: 35px;
+  width: 100vw;
+  background-color: $white;
+  border-bottom: 1px solid $gray-2;
+  position: fixed; 
+  top: 60px;
+  left: 0px;
+  @include nbx-flex-common;
+  justify-content: flex-start;
+  ul.nbx-route-tracer {
+    @include nbx-flex-common;
+    @include nbx-zero;
+    @include nbx-clean-list;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    width: 100%;
+    font: {
+      family: 'Roboto', sans-serif;
+      size: 13px;
+      weight: 400;
+    }
+    color: $black;
+    padding-left: 24px;
+    padding-right: 24px;
+    li {
+      position: relative;
+      padding-right: 18px;
+      &:after {
+        font: {
+          family: 'Nubox'!important;
+          size: 10px;
+        }
+        content: '\e90b';
+        position: absolute;
+        right: 4px;
+        top: 6px;
+      }
+      &:first-of-type {
+        padding-left: 20px;
+        &:before {
+          font: {
+            family: 'Nubox'!important;
+            size: 14px;
+          }
+          content: '\e901';
+          position: absolute;
+          left: 4px;
+          top: 3px;
+        }
+      }
+      &.active {
+        font-weight: 600;
+        padding-right: 0px;
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
