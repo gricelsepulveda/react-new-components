@@ -9,7 +9,6 @@ class Avatar extends React.Component {
     (this.props.firstname && this.props.lastname !== undefined) ? indicator = true : indicator = false
 
     this.state = { readyUser: indicator }   
-    console.log('hay usuario?' + ' ' + indicator)
   }
 
   render() {

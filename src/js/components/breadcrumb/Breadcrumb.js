@@ -14,13 +14,20 @@ class Breadcrumb extends React.Component {
       .then((res) => res.json())
       .then((data) => {
         const routeString =  data.ListaMenu[screenId]
+        const findParent = routeString['ParentId']
+
         let currentScreen = routeString['Descripcion']
         let levelScreen = routeString['Nivel']
-        let screenParents = routeString['ParentId']
+        let screenParents = findParent.routeString
+        //let parentName = screenParents['Descripcion']
+
+
 
         console.log(currentScreen)
         console.log(levelScreen)
-        console.log(screenParents)
+        console.log(findParent)
+        //console.log(parentName)
+        console.log(data.ListaMenu)
         
         console.log('data:', data.ListaMenu[screenId])
       })

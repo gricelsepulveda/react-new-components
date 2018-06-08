@@ -12,7 +12,7 @@ class Total extends React.Component {
 
   render() {
 
-    let { width, valueFull, price} = this.props
+    let { width, valueFull, price, addData} = this.props
     let error
     
     if (width === undefined) {
@@ -26,6 +26,22 @@ class Total extends React.Component {
       console.warn("BUSINESS RULE: Khipu doesn't accept ammounts over 5 million")
       error = 'validation-fail'
     }
+
+    let createFields = (data) => {
+      console.log(data)
+      fetch(`../../../assets/sample-data/${data}.json`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data)
+        let arrayData = data.map(function(){
+        })
+        console.log(arrayData)
+      })
+      
+    }
+
+    createFields(addData)
+
 
     return (
       <Fragment>
