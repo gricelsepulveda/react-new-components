@@ -12,7 +12,7 @@ class Total extends React.Component {
 
   render() {
 
-    let { width, valueFull, price, addData} = this.props
+    let { width, valueFull, price, addEntries, addValues} = this.props
     let error
     
     if (width === undefined) {
@@ -27,21 +27,12 @@ class Total extends React.Component {
       error = 'validation-fail'
     }
 
-    let createFields = (data) => {
-      console.log(data)
-      fetch(`../../../assets/sample-data/${data}.json`)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data)
-        let arrayData = data.map(function(){
-        })
-        console.log(arrayData)
-      })
-      
-    }
+    const entries = addEntries.split(",")
+    console.log(entries)
+    const values = addValues.split(",")
+    console.log(values)
 
-    createFields(addData)
-
+    //console.log(totales)
 
     return (
       <Fragment>

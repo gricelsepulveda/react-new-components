@@ -1,1 +1,10 @@
-{"Impuesto":988, "Otro impuesto":98899,"Descuento":98899}
+[
+{
+  "text" : "Impuesto",
+  "value": 99999
+},
+{
+  "text" : "Descuento",
+  "value": 333333
+}
+]

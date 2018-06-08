@@ -16,4 +16,4 @@ import Test from './src/js/components/Test'
 import Ejemplos from './src/js/components/Ejemplos'
 
 //RENDER COMPONENT AT DOM
-render(<Ejemplos/>, document.getElementById('root'))
+render(<Test/>, document.getElementById('root'))
