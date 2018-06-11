@@ -12,34 +12,34 @@ class Total extends React.Component {
 
   render() {
 
-    let { width, valueFull, price, addEntries, addValues} = this.props
+    let { width, price, validation, data } = this.props
     let error
     
     if (width === undefined) {
       console.warn('Please set width (width-200p or width-200 for percentages)')
-      width = ''
+      width = null
     }
 
     price = parseInt(price)
 
-    if ( price > 5000000){
-      console.warn("BUSINESS RULE: Khipu doesn't accept ammounts over 5 million")
-      error = 'validation-fail'
+    if (validation === false ) {
+      error ='validation-fail'
+    } 
+    else {
+      error = undefined
     }
-
-    const entries = addEntries.split(",")
-    console.log(entries)
-    const values = addValues.split(",")
-    console.log(values)
-
-    //console.log(totales)
 
     return (
       <Fragment>
         <div className="nbx-total">
-          <span>$ Total:</span> 
-          <div className={`nbx-total-cell ${(error) ? error : '' } ${width}`}>
-            { (price) ? price.toLocaleString('es-Es') : this.state.price.toLocaleString('es-Es') }
+          {
+            (data) ? data.map((x, key) => ( <div className="nbx-field" key={key}><span>{x.field}</span><span className={`${width}`}>{x.value.toLocaleString('es-Es') }</span></div>) ) : null
+          }
+          <div className="nbx-total-space">
+            <span className="nbx-span-total">$ Total:</span> 
+            <div className={`nbx-total-cell ${(error) ? error : null } ${width}`}>
+              { (price) ? price.toLocaleString('es-Es') : this.state.price.toLocaleString('es-Es') }
+            </div>
           </div>
         </div>
       </Fragment>

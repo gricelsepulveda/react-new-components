@@ -7,36 +7,62 @@
   padding: 18px;
   width: 100%;
   box-sizing: border-box;
-  @include nbx-flex-common;
-  justify-content: flex-end;
-  font: {
-    family: 'Roboto', sans-serif;
-    size: 16px;
-    weight: 600;
-  }
+  @include nbx-flex-alt;
+  align-items: flex-end;
   color: $black;
-  span {
-    text-transform: uppercase;
-    margin-right: 34px;
+  .nbx-field {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    color: $black;
+    font: {
+      family: 'Roboto', sans-serif;
+      size: 12px;
+      weight: 400;
+    }
+    span {
+      &:nth-of-type(1) {
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+      &:nth-of-type(2) {
+        padding: 0px 8px 0px 8px;
+        font-size: 16px;
+        text-align: right;
+      }
+    }
   }
-  .nbx-total-cell {
-    display: inline-block;
-    text-align: right;
-    padding: 0px 8px 0px 8px;
-    &.validation-fail {
-      position: relative;
-      color: $color-10;
-      &:after{
-        font: { 
-          family: 'Nubox'!important;
-          size: 18px;
-        }
-        content: '\e922';
-        position: absolute;
+  .nbx-total-space {
+    @include nbx-flex-common;
+    justify-content: flex-end;
+    font: {
+      family: 'Roboto', sans-serif;
+      size: 16px;
+      weight: 600;
+    }
+    span.nbx-span-total {
+      text-transform: uppercase;
+      margin-right: 34px;
+    }
+    .nbx-total-cell {
+      display: inline-block;
+      text-align: right;
+      padding: 0px 8px 0px 8px;
+      &.validation-fail {
+        position: relative;
         color: $color-10;
-        cursor: pointer;
-        top: 2px;
-        left: -18px;
+        &:after{
+          font: { 
+            family: 'Nubox'!important;
+            size: 18px;
+          }
+          content: '\e922';
+          position: absolute;
+          color: $color-10;
+          cursor: pointer;
+          top: 2px;
+          left: -18px;
+        }
       }
     }
   }
