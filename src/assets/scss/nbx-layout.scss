@@ -1,117 +1,74 @@
 //IMPORT GENERAL MIXINS AND CLASSES
 @import "_mixins.scss";
 body {
-    @include nbx-cero;
+  @include nbx-cero;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
 }
-
 .nbx-layout {
-  .navbar-space {
-      display: block;
-      width: 100%;
-      height: 60px;
-      position: fixed;
-      top: 0px;
-      left: 0px;
-  }
-  .breadcrumb-space {
-      display: block;
-      height: 38px;
-      position: fixed;
-      top: 60px;
-      left: 0px;
-      width: 100%;
-  }
-  .component-space {
-    height: auto;
-    width: auto;
-    @include nbx-cero;
-    > div {
-      height: auto;
-      width: auto;
-      @include nbx-cero;
-      .layout-header {
-        &.filter-common {
-          height: 32px;
-        }
-      }
-      .layout-body {
-        position: relative;
-        &.grid-actiontop-actionbottom {
-          height: calc(100vh - 260px);
-          position: relative;
-          &.no-filter {
-            height: calc(100vh - 187px);
-            >.grid-common {
-              height: calc(100vh - 291px);
-            }
-          }
-          >.grid-common {
-            height: calc(100vh - 330px);
-            .body-nbx-grid {
-              border-right: 1px solid #d8d8d8;
-              border-left: 1px solid #d8d8d8;
-              .cnt-body-nbx-grid {
-                max-height: 100% !important;
-                width: calc(100% + 1px);
-                border-left: 0;
-                .nivel-ul {
-                  border-left: 0;
-                }
-                .register.level-1 {
-                  .nivel-ul {
-                    border-left: 0;
-                  }
-                  &:last-of-type{
-                    border-bottom: 1px solid #d8d8d8;
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-
-h1.section-title {
-    @include nbx-roboto;
-    font: {
-        size: 17px;
-        weight: 600;
-    }
-    margin-top: -4px;
+  /*.nbx-menu {
+    width: 300px;
+    height: 100vh;
+    background: lightgreen;
+  }*/
+  box-sizing: border-box;
+  position: relative;
+  top: 120px;
+  left: 24px;
+  position: absolute;
+  width: calc(100vw - 48px);
+  height: calc(100vh - 48px - 96px);
+  .nbx-title {
     padding-bottom: 14px;
+    font: {
+      family: 'Roboto', 'Arial', sans-serif;
+      size: 17px;
+      weight: 600;
+    }
     color: $color-3;
-}
-
-.common-filter {
-    height: 32px;
-    box-sizing: border-box;
-}
-
-// SE ESCONDE SCROLL NATIVO PARA EVITAR SALTO CUANDO NO HAY REGISTROS
-
-.cnt-body-nbx-grid.nbx-scrollbar.scroll-content:empty {
-  overflow: hidden !important;
-  display: none;
-}
-
-// SE ESCONDE SCROLL HORIZONTAL
-
-.cnt-body-nbx-grid.nbx-scrollbar.scroll-content {
-  overflow-x: hidden !important;
-}
-  
-// ESPACIO PARA RENDEREAR EL POPOVER PRUEBA
-
-.nbx-pop-grid-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  .nbx-popover {
-    pointer-events: all;
+    text: {
+      align: left;
+      transform: capitalize;
+    }
+  }
+  .nbx-box-screen {
+    width: 100%;
+  }
+  .nbx-filter {
+    @include nbx-flex-common;
+    justify-content: flex-start;
+  }
+  &.free {
+    .nbx-box-screen {
+      height: 100%;
+    }
+  }
+  &.filter-grid {
+    .nbx-filter {
+      box-sizing: border-box;
+      padding-bottom: 24px;
+      min-height: 54px; 
+    }
+    .nbx-box-screen {
+      height: calc(100% - 93px);
+    }
+  }
+  &.grid {
+    .nbx-box-screen {
+      height: calc(100% - 39px);
+    }
+  }
+  &.designer {
+    border: 1px solid plum;
+    .nbx-title {
+      border: 1px solid greenyellow;
+    }
+    .nbx-filter {
+      border: 1px solid blue;
+    }
+    .nbx-box-screen {
+      border: 1px solid red;
+    }
   }
 }
