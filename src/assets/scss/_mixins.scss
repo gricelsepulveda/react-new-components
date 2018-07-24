@@ -90,6 +90,10 @@ $btn-hover-gray: #ebebeb; // :HOVER DISABLED BUTTON
   flex-wrap: nowrap;
 }
 
+@mixin _animation {
+  transition: all 0.25s ease-in-out;
+}
+
 @mixin nbx-flex-alt {
   display: flex;
   flex-direction: column;
